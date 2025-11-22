@@ -1,0 +1,574 @@
+{
+  "categories": [
+    {
+      "id": "ip-telephony",
+      "name": "IP-Telephony",
+      "slug": "ip-telephony",
+      "description": "Voice communication solutions for modern businesses",
+      "icon": "Phone",
+      "color": "from-blue-500 to-cyan-500",
+      "subcategories": [
+        {
+          "id": "office-communication",
+          "name": "Office Communication System",
+          "services": [
+            {
+              "id": "ip-pbx-on-premises",
+              "name": "IP-PBX On-Premises",
+              "slug": "ip-pbx-on-premises",
+              "icon": "Server",
+              "shortDescription": "On-site PBX with full control, IVR, call routing, recording, and more.",
+              "features": [
+                "SIP/IAX, IVR, Ring Groups, Call Queues",
+                "Extensions, Intercom, Paging, Call Recording",
+                "Voicemail-to-Email, Time Conditions, Caller ID",
+                "Reporting, Backup, and Failover Options",
+                "CRM Integration & Custom Dial Plans"
+              ],
+              "benefits": [
+                "Lower call costs with VoIP technology",
+                "Full data privacy and in-house control",
+                "Reliable and scalable with local deployment",
+                "Advanced features boost team productivity",
+                "Customizable to fit business needs"
+              ]
+            },
+            {
+              "id": "shared-hosted-ocs",
+              "name": "Shared Hosted",
+              "slug": "shared-hosted-ocs",
+              "icon": "Cloud",
+              "shortDescription": "Cloud-based PBX with zero hardware hassle and instant scalability.",
+              "features": [
+                "Cloud PBX (no on-site server)",
+                "IVR & Smart Call Routing",
+                "Queues, Ring Groups, Hunt Lists",
+                "Forwarding, Transfer, Follow Me",
+                "Voicemail-to-Email & Unified Messaging",
+                "Audio & Video Conferencing",
+                "CRM & 3rd-party integrations",
+                "Mobile/Remote Extensions",
+                "Real-time Analytics & Reporting",
+                "Encryption, Auto Updates & Backups",
+                "99.9% Uptime SLA"
+              ],
+              "benefits": [
+                "Zero upfront hardware or maintenance",
+                "Instant scalability",
+                "Work from anywhere",
+                "Enterprise features at predictable cost",
+                "Security patches & updates included",
+                "Built-in DR & redundancy"
+              ]
+            },
+            {
+              "id": "dedicated-hosted-ocs",
+              "name": "Dedicated Hosted",
+              "slug": "dedicated-hosted-ocs",
+              "icon": "Lock",
+              "shortDescription": "Fully managed cloud PBX dedicated to your business with exclusive resources.",
+              "features": [
+                "Dedicated Cloud PBX instance",
+                "Full IVR & Call Flow customization",
+                "Ring Groups, Queues, Hunt Lists",
+                "Extensions, Forwarding & Transfer",
+                "Voicemail-to-Email, Unified Messaging",
+                "Audio & Video Conferencing",
+                "Advanced Recording & Monitoring",
+                "CRM/ERP/API Integrations",
+                "Remote & Mobile Extensions",
+                "Real-Time Analytics & Reports",
+                "Encrypted Communication",
+                "Backups & Disaster Recovery"
+              ],
+              "benefits": [
+                "Exclusive resources, no tenant sharing",
+                "High performance & reliability",
+                "Full customization & integrations",
+                "Stronger compliance & isolation",
+                "Predictable OPEX",
+                "Provider-managed updates & security"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "customer-care-system",
+          "name": "Customer Care System",
+          "services": [
+            {
+              "id": "acd-on-premises",
+              "name": "ACD On-Premises",
+              "slug": "acd-on-premises",
+              "icon": "Headphones",
+              "shortDescription": "Automatic Call Distribution system with full control over call routing and agents.",
+              "features": [
+                "Advanced ACD engine, multi-level queues",
+                "Skill-based routing & load balancing",
+                "Real-time monitor, whisper/barge",
+                "IVR integration, recording & QM",
+                "Detailed reporting & analytics",
+                "CRM/contact-center integrations",
+                "Failover & redundancy",
+                "Full control of dial plans"
+              ],
+              "benefits": [
+                "Complete control over routing & agents",
+                "Optimized performance, reduced wait times",
+                "High reliability on-prem",
+                "Customizable to workflows",
+                "Enhanced security & privacy",
+                "Analytics for monitoring & reporting"
+              ]
+            },
+            {
+              "id": "shared-hosted-ccs",
+              "name": "Shared Hosted",
+              "slug": "shared-hosted-ccs",
+              "icon": "Cloud",
+              "shortDescription": "Cloud-based Customer Care System with scalable and cost-effective support.",
+              "features": [
+                "Multi-tenant CCS with ACD",
+                "IVR, Queues, Ring Groups, Skills",
+                "Forwarding, Transfer, Follow Me",
+                "Voicemail-to-Email & Unified Messaging",
+                "Audio/Video Conferencing",
+                "CRM integrations",
+                "Remote Agent Access",
+                "Real-time Analytics & Reporting",
+                "Encryption, Auto Updates & Backups"
+              ],
+              "benefits": [
+                "Zero hardware/maintenance cost",
+                "Scales with your team",
+                "Work from anywhere",
+                "Predictable monthly cost",
+                "Automatic updates & patches",
+                "Faster deployment than on-prem"
+              ]
+            },
+            {
+              "id": "dedicated-hosted-ccs",
+              "name": "Dedicated Hosted",
+              "slug": "dedicated-hosted-ccs",
+              "icon": "Lock",
+              "shortDescription": "Fully managed CCS with exclusive resources and enterprise-grade security.",
+              "features": [
+                "Dedicated cloud instance",
+                "ACD with skill-based routing",
+                "IVR & multi-level call flows",
+                "Ring Groups, Queues, Hunt Lists",
+                "Advanced Forwarding & Follow Me",
+                "Voicemail-to-Email & Unified Messaging",
+                "Audio/Video collaboration",
+                "Detailed Analytics & Dashboards",
+                "CRM/ERP Integrations",
+                "Remote/Mobile Agents",
+                "Encrypted Communication",
+                "Backups & Disaster Recovery",
+                "Custom Dial Plans & Routing"
+              ],
+              "benefits": [
+                "Exclusive resources, high performance",
+                "Complete customization",
+                "Enhanced data isolation & security",
+                "Predictable OPEX (no hardware)",
+                "Provider-managed maintenance",
+                "Scalable for growing teams"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "auto-obd",
+          "name": "Auto OBD Solution",
+          "services": [
+            {
+              "id": "auto-obd",
+              "name": "Auto OBD Solution",
+              "slug": "auto-obd",
+              "icon": "Zap",
+              "shortDescription": "Automated outbound dialer for campaigns, notifications, and alerts.",
+              "features": [
+                "Bulk list uploads & segmentation",
+                "Scheduling & retry logic",
+                "Predictive/progressive/preview dialing",
+                "IVR integration",
+                "TTS & pre-recorded messages",
+                "ACD & agent assignment",
+                "Real-time monitoring & reporting",
+                "DNC management",
+                "CRM integrations",
+                "Recording & quality monitoring"
+              ],
+              "benefits": [
+                "Automates outbound calling",
+                "Improves agent productivity",
+                "Reduces missed calls",
+                "Enhances CX with IVR/TTS",
+                "Actionable campaign insights",
+                "Compliance with DNC & regulations"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "crm",
+      "name": "CRM Solutions",
+      "slug": "crm",
+      "description": "Customer Relationship Management solutions tailored to your business",
+      "icon": "Database",
+      "color": "from-purple-500 to-pink-500",
+      "services": [
+        {
+          "id": "sales-crm",
+          "name": "Sales CRM Solution",
+          "slug": "sales-crm",
+          "icon": "TrendingUp",
+          "shortDescription": "Manage your sales pipeline with deal stages, tasks, and revenue forecasts.",
+          "features": [
+            "Deal stages and tasks",
+            "Click-to-call with call logs",
+            "Dashboards and revenue forecasts",
+            "Contact management",
+            "Activity tracking",
+            "Sales automation"
+          ],
+          "benefits": [
+            "Streamline sales process",
+            "Increase conversion rates",
+            "Better sales visibility",
+            "Automated follow-ups"
+          ]
+        },
+        {
+          "id": "lead-generation-crm",
+          "name": "Lead Generation CRM Solution",
+          "slug": "lead-generation-crm",
+          "icon": "Zap",
+          "shortDescription": "Capture, nurture, and convert leads with automated workflows.",
+          "features": [
+            "Web forms and APIs",
+            "Auto-assignment and notifications",
+            "Campaign tracking",
+            "Lead scoring",
+            "Multi-channel capture",
+            "Integration with marketing tools"
+          ],
+          "benefits": ["Never miss a lead", "Faster response times", "Improved lead quality", "Campaign ROI tracking"]
+        },
+        {
+          "id": "tours-travel-crm",
+          "name": "Tours & Travel CRM Solution",
+          "slug": "tours-travel-crm",
+          "icon": "Globe",
+          "shortDescription": "Complete travel management with packages, bookings, and customer communications.",
+          "features": [
+            "Package builder and quotations",
+            "Payments and vouchers",
+            "Integrations for email/SMS/voice",
+            "Itinerary management",
+            "Booking management",
+            "Customer communication"
+          ],
+          "benefits": [
+            "Streamline operations",
+            "Better customer experience",
+            "Automated communications",
+            "Increased bookings"
+          ]
+        },
+        {
+          "id": "student-leads-crm",
+          "name": "Student Leads CRM Solution",
+          "slug": "student-leads-crm",
+          "icon": "BookOpen",
+          "shortDescription": "Manage student inquiries from first contact to enrollment.",
+          "features": [
+            "Campaign sources and scoring",
+            "Admissions pipeline",
+            "Bulk communication tools",
+            "Document management",
+            "Application tracking",
+            "Student engagement"
+          ],
+          "benefits": [
+            "Higher enrollment rates",
+            "Organized admissions process",
+            "Better student engagement",
+            "Data-driven decisions"
+          ]
+        },
+        {
+          "id": "ecommerce-crm",
+          "name": "E-Commerce CRM Solution",
+          "slug": "ecommerce-crm",
+          "icon": "ShoppingCart",
+          "shortDescription": "360° customer view with RFM segmentation and abandoned cart recovery.",
+          "features": [
+            "Customer 360 and RFM segments",
+            "Abandoned cart automations",
+            "Support integrations",
+            "Order history tracking",
+            "Customer segmentation",
+            "Personalized marketing"
+          ],
+          "benefits": [
+            "Increase customer lifetime value",
+            "Recover lost sales",
+            "Better customer insights",
+            "Personalized experiences"
+          ]
+        },
+        {
+          "id": "order-management-crm",
+          "name": "Order Management CRM Solution",
+          "slug": "order-management-crm",
+          "icon": "PackageCheck",
+          "shortDescription": "End-to-end order management from capture to fulfillment.",
+          "features": [
+            "From capture to fulfillment",
+            "Inventory and invoicing",
+            "Notifications and SLA tracking",
+            "Multi-channel orders",
+            "Warehouse management",
+            "Shipping integrations"
+          ],
+          "benefits": [
+            "Streamlined operations",
+            "Reduced errors",
+            "Better customer satisfaction",
+            "Real-time visibility"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "server-solutions",
+      "name": "Server Solutions",
+      "slug": "server-solutions",
+      "description": "Enterprise server infrastructure and management",
+      "icon": "Server",
+      "color": "from-orange-500 to-red-500",
+      "services": [
+        {
+          "id": "virtualization-proxmox",
+          "name": "Virtualization (Proxmox)",
+          "slug": "virtualization-proxmox",
+          "icon": "Cpu",
+          "shortDescription": "Enterprise-grade virtualization with HA, replication, and real-time backup.",
+          "features": [
+            "KVM & LXC virtualization",
+            "HA clusters",
+            "Live migration",
+            "Snapshots, backup, replication",
+            "Ceph, ZFS, local storage",
+            "Monitoring & reporting",
+            "Network & firewall mgmt",
+            "RBAC security",
+            "Automated failover"
+          ],
+          "benefits": [
+            "Max server utilization, lower hardware cost",
+            "Business continuity via HA & replication",
+            "Reduce downtime with live migration",
+            "Centralized monitoring/alerting",
+            "Secure multi-tenant with RBAC"
+          ]
+        },
+        {
+          "id": "storage-clustering-ceph",
+          "name": "Storage Clustering (Ceph)",
+          "slug": "storage-clustering-ceph",
+          "icon": "HardDrive",
+          "shortDescription": "Highly available, scalable, self-healing distributed storage.",
+          "features": [
+            "Block, object, file storage",
+            "Replication & self-healing",
+            "No single point of failure",
+            "Flexible storage tiers",
+            "Integrates with Proxmox/OpenStack",
+            "Multi-site replication",
+            "Monitoring & analytics",
+            "Erasure coding & snapshots"
+          ],
+          "benefits": [
+            "Scale out without disruption",
+            "Data durability & continuity",
+            "Lower ops overhead via automation",
+            "Supports VMs, DBs, backups",
+            "Cost-effective, flexible infra"
+          ]
+        },
+        {
+          "id": "bulk-email",
+          "name": "Bulk E-mail Solution",
+          "slug": "bulk-email",
+          "icon": "Mail",
+          "shortDescription": "High-deliverability email campaigns with tracking and automation.",
+          "features": [
+            "Email warmup & reputation",
+            "Templates & scheduling",
+            "Opens/clicks/bounce tracking",
+            "Segmentation & targeting",
+            "Personalization (dynamic fields)",
+            "SMTP & multi-domain",
+            "Analytics dashboards",
+            "CAN-SPAM / GDPR compliance"
+          ],
+          "benefits": [
+            "Boost deliverability & inbox placement",
+            "Save time with automation",
+            "Actionable insights",
+            "Compliance assured"
+          ]
+        },
+        {
+          "id": "server-monitoring",
+          "name": "Server Monitoring System",
+          "slug": "server-monitoring",
+          "icon": "Activity",
+          "shortDescription": "Comprehensive monitoring with metrics, logs, alerts, and integrations.",
+          "features": [
+            "Real-time dashboards",
+            "Anomaly detection & alerts",
+            "Uptime monitoring & SLOs",
+            "Log aggregation & analysis",
+            "Alert routing (email/Slack/SMS/webhook)",
+            "ITSM/ticketing integrations",
+            "Historical retention",
+            "Multi-server/multi-site",
+            "Templates & thresholds"
+          ],
+          "benefits": [
+            "Proactive issue detection & resolution",
+            "Reduced downtime via escalation",
+            "Operational efficiency",
+            "Performance insights",
+            "Seamless workflow integrations"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hosting",
+      "name": "Web Hosting",
+      "slug": "hosting",
+      "description": "Reliable and secure web hosting solutions",
+      "icon": "Globe",
+      "color": "from-yellow-500 to-orange-500",
+      "services": [
+        {
+          "id": "web-hosting",
+          "name": "Web Hosting",
+          "slug": "web-hosting",
+          "icon": "Server",
+          "shortDescription": "Reliable, fast, and secure hosting with backups, SSL, and full support.",
+          "features": [
+            "Shared, VPS, Dedicated",
+            "SSL, CDN, DDoS protection",
+            "Daily backups & restores",
+            "99.9% uptime & monitoring",
+            "cPanel/Plesk, 1-click apps",
+            "SSD storage, optimized performance",
+            "24/7 support",
+            "Email hosting & DB support"
+          ],
+          "benefits": [
+            "Fast, reliable websites",
+            "Security & backups",
+            "Easy management",
+            "Scalable options",
+            "Professional support"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "networking",
+      "name": "Networking Solutions",
+      "slug": "networking",
+      "description": "Professional network design and implementation",
+      "icon": "Network",
+      "color": "from-green-500 to-emerald-500",
+      "services": [
+        {
+          "id": "corporate-networking",
+          "name": "Corporate Networking Solution",
+          "slug": "corporate-networking",
+          "icon": "Layers",
+          "shortDescription": "End-to-end LAN/WAN with performance, security, and professional support.",
+          "features": [
+            "Design, procurement, deployment",
+            "LAN, WAN, Wi-Fi, wired",
+            "Firewall, VPN, advanced security",
+            "Monitoring & optimization",
+            "Cabling, switches, routers, APs",
+            "Docs, configs, diagrams",
+            "Staff training",
+            "Redundancy & HA",
+            "VoIP & cloud integration"
+          ],
+          "benefits": [
+            "Reliable, high-performance network",
+            "Secure comms across sites",
+            "Reduced downtime via redundancy",
+            "Productivity through stability",
+            "Expert guidance & documentation"
+          ]
+        },
+        {
+          "id": "data-networking",
+          "name": "Data Networking Solution",
+          "slug": "data-networking",
+          "icon": "Network",
+          "shortDescription": "Core/edge networking with segmentation and monitoring.",
+          "features": [
+            "Core/edge switching & routing",
+            "VLANs, QoS, link aggregation",
+            "Redundancy & HA",
+            "Segmentation for security/perf",
+            "NMS monitoring & alerts",
+            "Firewall/VPN integrations",
+            "Traffic analytics & optimization",
+            "Docs & remote management"
+          ],
+          "benefits": [
+            "Reliable high-performance infra",
+            "Downtime reduction",
+            "Secure access control",
+            "Traffic visibility",
+            "Scalable for growth"
+          ]
+        },
+        {
+          "id": "firewall-solution",
+          "name": "Firewall Solution",
+          "slug": "firewall-solution",
+          "icon": "Shield",
+          "shortDescription": "NGFW and IPS/IDS to protect your perimeter and ensure secure traffic.",
+          "features": [
+            "Policies, NAT, VPN",
+            "IPS/IDS",
+            "NGFW app control",
+            "Threat intel, logging, reporting",
+            "HA & failover",
+            "Auto firmware updates",
+            "SIEM integration",
+            "Web filtering & malware protection",
+            "Centralized management"
+          ],
+          "benefits": [
+            "Protect against external & internal threats",
+            "HA ensures continuity",
+            "Compliance-ready logging",
+            "Reduced breach risk",
+            "Centralized admin & monitoring"
+          ]
+        }
+      ]
+    }
+  ]
+}

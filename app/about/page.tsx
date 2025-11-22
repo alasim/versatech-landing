@@ -1,0 +1,167 @@
+import { Card, CardContent } from "@/components/ui/card"
+import { CheckCircle, Users, Lightbulb, Award } from "lucide-react"
+
+export default function AboutPage() {
+  return (
+    <div className="min-h-screen w-full relative pt-20">
+      {/* Grid background */}
+      {/* <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: `
+            linear-gradient(45deg, transparent 49%, #e5e7eb 49%, #e5e7eb 51%, transparent 51%),
+            linear-gradient(-45deg, transparent 49%, #e5e7eb 49%, #e5e7eb 51%, transparent 51%)
+          `,
+          backgroundSize: "40px 40px",
+          WebkitMaskImage: "radial-gradient(ellipse 80% 80% at 0% 0%, #000 50%, transparent 90%)",
+          maskImage: "radial-gradient(ellipse 80% 80% at 0% 0%, #000 50%, transparent 90%)",
+        }}
+      /> */}
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 py-16">
+        {/* Hero Section */}
+        <div className="py-20 mb-20 flex items-center justify-center flex-col glass-card">
+          <h1 className="text-4xl font-bold tracking-tight mb-4 text-balance">About Versatech Solutions</h1>
+          <p className="text-lg text-muted-foreground text-pretty max-w-3xl">We're a leading provider of enterprise communication and business solutions, helping organizations
+            streamline operations, enhance customer engagement, and drive growth.</p>
+        </div>
+
+
+
+        {/* Mission Section */}
+        <div className="grid lg:grid-cols-2 gap-12 mb-20">
+          <div>
+            <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
+            <p className="text-lg text-muted-foreground mb-4">
+              To empower businesses of all sizes with cutting-edge communication and technology solutions that enable
+              them to operate more efficiently, connect with customers meaningfully, and achieve their strategic goals.
+            </p>
+            <p className="text-lg text-muted-foreground">
+              We believe that the right technology should be accessible, scalable, and tailored to your unique business
+              needs.
+            </p>
+          </div>
+          <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-lg p-12 flex items-center justify-center">
+            <Award className="size-32 text-primary/20" />
+          </div>
+        </div>
+
+        {/* Our Approach */}
+        <div className="mb-20">
+          <h2 className="text-3xl font-bold mb-12 text-center">Our Approach</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Customer-Centric",
+                description:
+                  "We put your business needs first, designing solutions that deliver real value and measurable results.",
+                icon: Users,
+              },
+              {
+                title: "Innovation-Driven",
+                description:
+                  "We stay ahead of the curve, continuously evolving our offerings with the latest technologies and best practices.",
+                icon: Lightbulb,
+              },
+              {
+                title: "Quality-Focused",
+                description:
+                  "We maintain the highest standards in service delivery, reliability, and support to ensure your success.",
+                icon: CheckCircle,
+              },
+            ].map((item, idx) => {
+              const Icon = item.icon
+              return (
+                <Card key={idx} className="hover:shadow-lg transition-shadow glass-card border border-primary/10">
+                  <CardContent className="p-8">
+                    <Icon className="size-12 text-primary mb-4" />
+                    <h3 className="text-xl font-bold mb-3">{item.title}</h3>
+                    <p className="text-muted-foreground">{item.description}</p>
+                  </CardContent>
+                </Card>
+              )
+            })}
+          </div>
+        </div>
+
+        {/* Our Culture */}
+        <div className="grid lg:grid-cols-2 gap-12 mb-20">
+          <div className="bg-gradient-to-br from-accent/10 to-primary/10 rounded-lg p-12 flex items-center justify-center">
+            <Users className="size-32 text-accent/20" />
+          </div>
+          <div>
+            <h2 className="text-3xl font-bold mb-6">Our Culture</h2>
+            <div className="space-y-4">
+              {[
+                "Collaboration: We believe in working together, both internally and with our clients, to achieve shared success.",
+                "Integrity: We operate with transparency and honesty in all our dealings.",
+                "Excellence: We're committed to continuous improvement and delivering our best work every day.",
+                "Adaptability: We embrace change and quickly respond to market dynamics and client needs.",
+                "Growth: We invest in our team's development and foster an environment of learning and innovation.",
+              ].map((value, idx) => (
+                <div key={idx} className="flex items-start gap-3">
+                  <CheckCircle className="size-5 text-primary flex-shrink-0 mt-0.5" />
+                  <p className="text-muted-foreground">{value}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Why Choose Us */}
+        <div className="mb-20">
+          <h2 className="text-3xl font-bold mb-12 text-center">Why Choose Versatech Solutions</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            {[
+              {
+                title: "Proven Track Record",
+                description: "Years of experience delivering solutions to enterprises across diverse industries.",
+              },
+              {
+                title: "Expert Team",
+                description: "Our talented professionals bring deep industry expertise and technical knowledge.",
+              },
+              {
+                title: "Comprehensive Solutions",
+                description: "From IP-Telephony to CRM and server solutions, we cover all your communication needs.",
+              },
+              {
+                title: "24/7 Support",
+                description: "Dedicated support team ready to assist you whenever you need us.",
+              },
+              {
+                title: "Scalable & Flexible",
+                description: "Solutions that grow with your business, whether you're a startup or enterprise.",
+              },
+              {
+                title: "Cost-Effective",
+                description: "Competitive pricing without compromising on quality or service.",
+              },
+            ].map((item, idx) => (
+              <Card key={idx} className="hover:shadow-lg transition-shadow glass-card border border-primary/10">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-3 mb-3">
+                    <CheckCircle className="size-6 text-primary flex-shrink-0" />
+                    <h3 className="text-lg font-semibold">{item.title}</h3>
+                  </div>
+                  <p className="text-muted-foreground text-sm">{item.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div className="p-12 rounded-lg bg-gradient-to-r from-primary/5 to-accent/5 border border-primary/20 text-center">
+          <h2 className="text-3xl font-bold mb-4">Ready to Partner with Us?</h2>
+          <p className="text-lg text-muted-foreground mb-8">
+            Let's discuss how Versatech Solutions can help transform your business.
+          </p>
+          <button className="px-8 py-3 rounded-full bg-primary text-white font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all">
+            Get In Touch
+          </button>
+        </div>
+      </div>
+    </div>
+  )
+}
