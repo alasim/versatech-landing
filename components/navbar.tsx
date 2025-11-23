@@ -81,7 +81,7 @@ export default function Navbar() {
               {expandedMobileSection === 'company' && (
                 <div className="pl-4 space-y-2 mt-2 mb-2 border-l-2 border-primary/10">
                   <Link href="/about" className="block text-sm text-muted-foreground hover:text-primary py-1.5" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
-                  <Link href="/#services" className="block text-sm text-muted-foreground hover:text-primary py-1.5" onClick={() => setIsMobileMenuOpen(false)}>Services</Link>
+                  <Link href="/services" className="block text-sm text-muted-foreground hover:text-primary py-1.5" onClick={() => setIsMobileMenuOpen(false)}>Services</Link>
                   <Link href="/#solutions" className="block text-sm text-muted-foreground hover:text-primary py-1.5" onClick={() => setIsMobileMenuOpen(false)}>Solutions</Link>
                   <Link href="/#products" className="block text-sm text-muted-foreground hover:text-primary py-1.5" onClick={() => setIsMobileMenuOpen(false)}>Products</Link>
                 </div>
