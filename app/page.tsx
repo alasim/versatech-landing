@@ -3,6 +3,9 @@ import Navbar from "@/components/navbar"
 import Hero from "@/components/hero"
 import Services from "@/components/services"
 import Solutions from "@/components/solutions"
+import VisionMission from "@/components/vision-mission"
+import Industries from "@/components/industries"
+import WhyChooseUs from "@/components/why-choose-us"
 import CTA from "@/components/cta"
 import Footer from "@/components/footer"
 
@@ -25,8 +28,11 @@ export default function Home() {
       <main className="relative z-10 min-h-screen">
 
         <Hero />
+        {/* <VisionMission /> */}
         <Services />
         <Solutions />
+        <Industries />
+        <WhyChooseUs />
         <CTA />
 
       </main>

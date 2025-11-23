@@ -257,7 +257,12 @@
             "Multi-channel capture",
             "Integration with marketing tools"
           ],
-          "benefits": ["Never miss a lead", "Faster response times", "Improved lead quality", "Campaign ROI tracking"]
+          "benefits": [
+            "Never miss a lead",
+            "Faster response times",
+            "Improved lead quality",
+            "Campaign ROI tracking"
+          ]
         },
         {
           "id": "tours-travel-crm",

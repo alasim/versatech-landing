@@ -1,45 +1,32 @@
+import Image from "next/image"
+import servicesData from "@/data/services.json"
+import Link from "next/link"
 export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-card border-t border-primary/10">
+    <footer className="bg-background border-t border-primary/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-bold">
-                VS
-              </div>
-              <span className="font-bold text-foreground">Versatech</span>
+              <Image src="/logo.png" alt="Logo" width={150} height={40} className="" />
             </div>
-            <p className="text-muted-foreground text-sm">Enterprise solutions for modern businesses</p>
+            <p className="text-muted-foreground text-sm">Versatech delivers enterprise-grade communication and business platforms designed for modern organizations.</p>
           </div>
 
           {/* Solutions */}
           <div>
             <h4 className="font-bold text-foreground mb-4">Solutions</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>
-                <a href="#" className="hover:text-foreground transition">
-                  IP-Telephony
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-foreground transition">
-                  CRM
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-foreground transition">
-                  Hosting
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-foreground transition">
-                  Networking
-                </a>
-              </li>
+              {servicesData.categories.map((category) => (
+                <li key={category.id}>
+                  <Link href={`/services/${category.slug}`} className="hover:text-foreground transition">
+                    {category.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -48,24 +35,24 @@ export default function Footer() {
             <h4 className="font-bold text-foreground mb-4">Company</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <a href="#" className="hover:text-foreground transition">
+                <Link href="#" className="hover:text-foreground transition">
                   About Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-foreground transition">
+                <Link href="#" className="hover:text-foreground transition">
                   Blog
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-foreground transition">
+                <Link href="#" className="hover:text-foreground transition">
                   Careers
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-foreground transition">
+                <Link href="/contact" className="hover:text-foreground transition">
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -75,24 +62,24 @@ export default function Footer() {
             <h4 className="font-bold text-foreground mb-4">Legal</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <a href="#" className="hover:text-foreground transition">
+                <Link href="#" className="hover:text-foreground transition">
                   Privacy
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-foreground transition">
+                <Link href="#" className="hover:text-foreground transition">
                   Terms
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-foreground transition">
+                <Link href="#" className="hover:text-foreground transition">
                   Security
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-foreground transition">
+                <Link href="#" className="hover:text-foreground transition">
                   Compliance
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

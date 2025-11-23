@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { ArrowRight, Sparkles } from "lucide-react"
+import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 
 const solutions = [
@@ -50,11 +51,17 @@ const solutions = [
 export default function Solutions() {
   return (
     <section id="solutions" className="py-24 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-accent/5 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-b from-primary/5 via-accent/5 to-transparent pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16"
+        >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 mb-4">
             <Sparkles className="size-4 text-primary" />
             <span className="text-sm font-semibold text-primary">Featured Solutions</span>
@@ -64,75 +71,83 @@ export default function Solutions() {
             Proven solutions delivering measurable value to businesses across industries. Click any solution to learn
             more.
           </p>
-        </div>
+        </motion.div>
 
         {/* Solutions Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {solutions.map((solution) => (
-            <Link key={solution.id} href={`/services/${solution.slug}`}>
-              <div className="group h-full bg-background/50 rounded-2xl border border-primary/10 overflow-hidden hover:border-primary/30 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                {/* Header with Gradient */}
-                {/* <div className={`h-24 bg-gradient-to-r ${solution.gradient} relative overflow-hidden`}>
-                  <div className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity" />
-                  <div className="absolute top-4 right-4 text-3xl">{solution.icon}</div>
-                </div> */}
-
-                {/* Content */}
-                <div className="p-6 md:p-8">
-                  {/* Title and Number */}
-                  <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
-                      {solution.category}
-                    </h3>
-                    <span className="text-3xl font-bold text-primary/10 group-hover:text-primary/20 transition-colors">
-                      0{solution.id}
-                    </span>
-                  </div>
-
-                  {/* Description */}
-                  <p className="text-muted-foreground mb-5 line-clamp-2">{solution.description}</p>
-
-                  {/* Features */}
-                  <div className="mb-6">
-                    <p className="text-xs text-muted-foreground uppercase tracking-widest font-semibold mb-3">
-                      Key Features
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {solution.features.map((feature, i) => (
-                        <span
-                          key={i}
-                          className="px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium group-hover:bg-primary/20 transition-colors"
-                        >
-                          {feature}
-                        </span>
-                      ))}
+          {solutions.map((solution, index) => (
+            <motion.div
+              key={solution.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <Link href={`/services/${solution.slug}`}>
+                <div className="group h-full bg-background/50 rounded-2xl border border-primary/10 overflow-hidden hover:border-primary/30 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                  {/* Content */}
+                  <div className="p-6 md:p-8">
+                    {/* Title and Number */}
+                    <div className="flex items-start justify-between mb-3">
+                      <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
+                        {solution.category}
+                      </h3>
+                      <span className="text-3xl font-bold text-primary/10 group-hover:text-primary/20 transition-colors">
+                        0{solution.id}
+                      </span>
                     </div>
-                  </div>
 
-                  {/* Divider */}
-                  <div className="border-t border-primary/10 pt-4">
-                    <div className="flex items-center justify-between">
-                      <p className="text-sm text-muted-foreground">
-                        <span className="font-semibold text-foreground">Benefit:</span> {solution.benefit}
+                    {/* Description */}
+                    <p className="text-muted-foreground mb-5 line-clamp-2">{solution.description}</p>
+
+                    {/* Features */}
+                    <div className="mb-6">
+                      <p className="text-xs text-muted-foreground uppercase tracking-widest font-semibold mb-3">
+                        Key Features
                       </p>
-                      <ArrowRight className="size-5 text-primary opacity-0 group-hover:opacity-100 transition-all transform group-hover:translate-x-1" />
+                      <div className="flex flex-wrap gap-2">
+                        {solution.features.map((feature, i) => (
+                          <span
+                            key={i}
+                            className="px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium group-hover:bg-primary/20 transition-colors"
+                          >
+                            {feature}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Divider */}
+                    <div className="border-t border-primary/10 pt-4">
+                      <div className="flex items-center justify-between">
+                        <p className="text-sm text-muted-foreground">
+                          <span className="font-semibold text-foreground">Benefit:</span> {solution.benefit}
+                        </p>
+                        <ArrowRight className="size-5 text-primary opacity-0 group-hover:opacity-100 transition-all transform group-hover:translate-x-1" />
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </Link>
+              </Link>
+            </motion.div>
           ))}
         </div>
 
         {/* CTA Section */}
-        <div className="mt-16 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="mt-16 text-center"
+        >
           <p className="text-muted-foreground mb-6">
             Need a custom solution? Our team can help you find the perfect fit for your business.
           </p>
           <Button size="lg" className="rounded-full">
             Explore All Services
           </Button>
-        </div>
+        </motion.div>
       </div>
     </section>
   )

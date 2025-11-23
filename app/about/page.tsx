@@ -1,5 +1,10 @@
+"use client"
+
+import Industries from "@/components/industries"
 import { Card, CardContent } from "@/components/ui/card"
+import WhyChooseUs from "@/components/why-choose-us"
 import { CheckCircle, Users, Lightbulb, Award } from "lucide-react"
+import { motion } from "framer-motion"
 
 export default function AboutPage() {
   return (
@@ -20,17 +25,27 @@ export default function AboutPage() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 py-16">
         {/* Hero Section */}
-        <div className="py-20 mb-20 flex items-center justify-center flex-col glass-card">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="py-20 mb-20 flex items-center justify-center flex-col glass-card"
+        >
           <h1 className="text-4xl font-bold tracking-tight mb-4 text-balance">About Versatech Solutions</h1>
           <p className="text-lg text-muted-foreground text-pretty max-w-3xl">We're a leading provider of enterprise communication and business solutions, helping organizations
             streamline operations, enhance customer engagement, and drive growth.</p>
-        </div>
+        </motion.div>
 
 
 
         {/* Mission Section */}
         <div className="grid lg:grid-cols-2 gap-12 mb-20">
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
             <p className="text-lg text-muted-foreground mb-4">
               To empower businesses of all sizes with cutting-edge communication and technology solutions that enable
@@ -40,15 +55,29 @@ export default function AboutPage() {
               We believe that the right technology should be accessible, scalable, and tailored to your unique business
               needs.
             </p>
-          </div>
-          <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-lg p-12 flex items-center justify-center">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="bg-linear-to-br from-primary/10 to-accent/10 rounded-lg p-12 flex items-center justify-center"
+          >
             <Award className="size-32 text-primary/20" />
-          </div>
+          </motion.div>
         </div>
 
         {/* Our Approach */}
         <div className="mb-20">
-          <h2 className="text-3xl font-bold mb-12 text-center">Our Approach</h2>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-3xl font-bold mb-12 text-center"
+          >
+            Our Approach
+          </motion.h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
@@ -72,13 +101,21 @@ export default function AboutPage() {
             ].map((item, idx) => {
               const Icon = item.icon
               return (
-                <Card key={idx} className="hover:shadow-lg transition-shadow glass-card border border-primary/10">
-                  <CardContent className="p-8">
-                    <Icon className="size-12 text-primary mb-4" />
-                    <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-                    <p className="text-muted-foreground">{item.description}</p>
-                  </CardContent>
-                </Card>
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                >
+                  <Card className="hover:shadow-lg transition-shadow glass-card border border-primary/10 h-full">
+                    <CardContent className="p-8">
+                      <Icon className="size-12 text-primary mb-4" />
+                      <h3 className="text-xl font-bold mb-3">{item.title}</h3>
+                      <p className="text-muted-foreground">{item.description}</p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
               )
             })}
           </div>
@@ -86,10 +123,21 @@ export default function AboutPage() {
 
         {/* Our Culture */}
         <div className="grid lg:grid-cols-2 gap-12 mb-20">
-          <div className="bg-gradient-to-br from-accent/10 to-primary/10 rounded-lg p-12 flex items-center justify-center">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="bg-linear-to-br from-accent/10 to-primary/10 rounded-lg p-12 flex items-center justify-center"
+          >
             <Users className="size-32 text-accent/20" />
-          </div>
-          <div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             <h2 className="text-3xl font-bold mb-6">Our Culture</h2>
             <div className="space-y-4">
               {[
@@ -100,59 +148,26 @@ export default function AboutPage() {
                 "Growth: We invest in our team's development and foster an environment of learning and innovation.",
               ].map((value, idx) => (
                 <div key={idx} className="flex items-start gap-3">
-                  <CheckCircle className="size-5 text-primary flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="size-5 text-primary shrink-0 mt-0.5" />
                   <p className="text-muted-foreground">{value}</p>
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Why Choose Us */}
-        <div className="mb-20">
-          <h2 className="text-3xl font-bold mb-12 text-center">Why Choose Versatech Solutions</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              {
-                title: "Proven Track Record",
-                description: "Years of experience delivering solutions to enterprises across diverse industries.",
-              },
-              {
-                title: "Expert Team",
-                description: "Our talented professionals bring deep industry expertise and technical knowledge.",
-              },
-              {
-                title: "Comprehensive Solutions",
-                description: "From IP-Telephony to CRM and server solutions, we cover all your communication needs.",
-              },
-              {
-                title: "24/7 Support",
-                description: "Dedicated support team ready to assist you whenever you need us.",
-              },
-              {
-                title: "Scalable & Flexible",
-                description: "Solutions that grow with your business, whether you're a startup or enterprise.",
-              },
-              {
-                title: "Cost-Effective",
-                description: "Competitive pricing without compromising on quality or service.",
-              },
-            ].map((item, idx) => (
-              <Card key={idx} className="hover:shadow-lg transition-shadow glass-card border border-primary/10">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-3 mb-3">
-                    <CheckCircle className="size-6 text-primary flex-shrink-0" />
-                    <h3 className="text-lg font-semibold">{item.title}</h3>
-                  </div>
-                  <p className="text-muted-foreground text-sm">{item.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
+        <Industries />
+        <WhyChooseUs />
 
         {/* CTA */}
-        <div className="p-12 rounded-lg bg-gradient-to-r from-primary/5 to-accent/5 border border-primary/20 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="p-12 rounded-lg bg-linear-to-r mt-10 from-primary/5 to-accent/5 border border-primary/20 text-center"
+        >
           <h2 className="text-3xl font-bold mb-4">Ready to Partner with Us?</h2>
           <p className="text-lg text-muted-foreground mb-8">
             Let's discuss how Versatech Solutions can help transform your business.
@@ -160,7 +175,7 @@ export default function AboutPage() {
           <button className="px-8 py-3 rounded-full bg-primary text-white font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all">
             Get In Touch
           </button>
-        </div>
+        </motion.div>
       </div>
     </div>
   )

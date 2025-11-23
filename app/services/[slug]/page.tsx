@@ -52,9 +52,14 @@ export default function ServicePage() {
           <span className="text-foreground">{category.name}</span>
         </div>
 
-        <div className="mb-8 relative min-h-[200px] flex flex-col glass-card justify-center items-center ">
+        <div className={"mb-8 relative min-h-[200px] flex flex-col glass-card justify-center items-center"}>
           <h1 className="text-4xl font-bold tracking-tight mb-4 text-balance">{category.name}</h1>
           <p className="text-lg text-muted-foreground text-pretty max-w-3xl">{category.description}</p>
+          {/* <div
+            className={`w-40 h-40 absolute md:right-10 right-0 top-0 opacity-5 flex items-center justify-center rounded-xl bg-linear-to-br ${category.color} p-3 mb-6 text-white shadow-lg`}
+          >
+            <IconComponent size={150} />
+          </div> */}
 
         </div>
 
@@ -71,7 +76,7 @@ export default function ServicePage() {
                       <Link key={service.id} href={`/services/${service.slug}`}>
                         <Card className="h-full bg-background/50 border border-border/50 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer group">
                           <CardContent className="p-6">
-                            <div className="w-12 h-12 rounded-lg bg-primary/10 p-2.5 mb-4 group-hover:bg-primary/20 transition-colors">
+                            <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-primary/10 p-2.5 mb-4 group-hover:bg-primary/20 transition-colors">
                               <IconComponent className="text-primary" size={20} />
                             </div>
                             <h3 className="text-lg font-semibold mb-2">{service.name}</h3>
@@ -94,7 +99,7 @@ export default function ServicePage() {
                 <Link key={service.id} href={`/services/${service.slug}`}>
                   <Card className="h-full glass-card border border-primary/10 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer group">
                     <CardContent className="p-6">
-                      <div className="w-12 h-12 rounded-lg bg-primary/10 p-2.5 mb-4 group-hover:bg-primary/20 transition-colors">
+                      <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-primary/10 p-2.5 mb-4 group-hover:bg-primary/20 transition-colors">
                         <IconComponent className="text-primary" size={20} />
                       </div>
                       <h3 className="text-lg font-semibold mb-2">{service.name}</h3>
@@ -119,6 +124,7 @@ export default function ServicePage() {
 
   const { service, categoryName, subcategoryName } = result
 
+  const IconComponent = (Icons as any)[service.icon as string] || Icons.Package
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-20">
@@ -142,16 +148,17 @@ export default function ServicePage() {
         <span>/</span>
         <span className="text-foreground">{service.name}</span>
       </div>
-      <div className="mb-8 relative min-h-[200px] flex flex-col glass-card justify-center items-center ">
-        <h1 className="text-4xl font-bold tracking-tight mb-4 text-balance">{service.name}</h1>
-        <p className="text-lg text-muted-foreground text-pretty max-w-3xl">{service.shortDescription}</p>
-        {/* <Button asChild variant="ghost" size="sm" className="gap-2 mb-4">
-          <Link href="/">
-            <ArrowLeft className="size-4" />
-            Back to Home
-          </Link>
-        </Button> */}
-
+      <div className="mb-8 relative  min-h-[200px] flex flex-col glass-card justify-center items-center ">
+        {/* <div className="w-40 h-40 absolute hidden md:flex left-10 bottom-0 opacity-10  items-center justify-center rounded-xl bg-linear-to-br ${category.color} p-3 text-primary">
+          <IconComponent size={150} />
+        </div> */}
+        <div >
+          <h1 className="text-4xl font-bold tracking-tight mb-4 text-balance">{service.name}</h1>
+          <p className="text-lg text-muted-foreground text-pretty max-w-3xl">{service.shortDescription}</p>
+        </div>
+        <div className="w-40 h-40 absolute md:right-10 right-0 top-0 opacity-10 flex items-center justify-center rounded-xl bg-linear-to-br ${category.color} p-3 text-primary">
+          <IconComponent size={150} />
+        </div>
 
       </div>
 
