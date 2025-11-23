@@ -451,8 +451,8 @@ export function NavigationMenuDemo() {
         <NavigationMenuItem>
           <NavigationMenuTrigger className="text-sm font-medium bg-transparent">Server & Hosting</NavigationMenuTrigger>
           <NavigationMenuContent>
+            <h4 className="font-semibold text-foreground">Server & Hosting</h4>
             <div className="grid w-[600px] gap-4 p-2 md:grid-cols-2">
-
               <div className="space-y-2">
                 <p className="text-xs border-l-4 bg-primary/10 p-1 border-primary pl-2 text-muted-foreground uppercase tracking-wide font-semibold">Server Solutions</p>
                 {servicesData.categories
