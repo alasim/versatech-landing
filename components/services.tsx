@@ -1,10 +1,10 @@
 "use client"
 
-import Link from "next/link"
-import { ArrowRight } from "lucide-react"
-import * as Icons from "lucide-react"
-import { motion } from "framer-motion"
 import servicesData from "@/data/services.json"
+import { motion } from "framer-motion"
+import * as Icons from "lucide-react"
+import { ArrowRight } from "lucide-react"
+import Link from "next/link"
 
 
 export default function Services() {

@@ -1,12 +1,13 @@
-"use client"
 
-import { notFound, useParams } from "next/navigation"
-import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { ArrowLeft, CheckCircle } from "lucide-react"
-import * as Icons from "lucide-react"
+import { Separator } from "@/components/ui/separator"
 import servicesData from "@/data/services.json"
+import * as Icons from "lucide-react"
+import { CheckCircle } from "lucide-react"
+import Image from "next/image"
+import Link from "next/link"
+import { notFound } from "next/navigation"
 
 // Find category by slug
 function findCategoryBySlug(slug: string) {
@@ -31,10 +32,21 @@ function findServiceBySlug(slug: string) {
   }
   return null
 }
+interface ServicePageProps {
+  params: Promise<{ slug: string }>
+}
+export const generateStaticParams = () => {
+  // service stay in categories.subcategories.services or categories.services
+  const servicesInSubcategories = servicesData.categories.filter(e => e.subcategories).map((cat) => cat.subcategories?.map((subcat) => subcat.services))
+  const servicesInCategories = servicesData.categories.filter(e => e.services).map((cat) => cat.services)
+  const services = [...servicesInSubcategories, ...servicesInCategories].flat()
+  return services.map((service: any) => ({
+    slug: service?.slug || "",
+  }))
+}
 
-export default function ServicePage() {
-  const params = useParams()
-  const slug = params.slug as string
+export default async function ServicePage({ params }: ServicePageProps) {
+  const slug = (await params).slug
 
   // First check if it's a category page
   const category = findCategoryBySlug(slug)
@@ -127,7 +139,7 @@ export default function ServicePage() {
   const IconComponent = (Icons as any)[service.icon as string] || Icons.Package
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-20">
+    <div className="max-w-7xl mx-auto px-4 py-28 space-y-8">
       <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground my-4">
         <Link href="/" className="hover:text-primary transition-colors">
           Home
@@ -156,6 +168,8 @@ export default function ServicePage() {
           <h1 className="text-4xl font-bold tracking-tight mb-4 text-balance">{service.name}</h1>
           <p className="text-lg text-muted-foreground text-pretty max-w-3xl">{service.shortDescription}</p>
         </div>
+
+
         <div className="w-40 h-40 absolute md:right-10 right-0 top-0 opacity-10 flex items-center justify-center rounded-xl bg-linear-to-br ${category.color} p-3 text-primary">
           <IconComponent size={150} />
         </div>
@@ -192,12 +206,33 @@ export default function ServicePage() {
         </Card>
       </div>
 
+      <Separator />
+      {/* Service Details Image */}
+      <div className="mt-10 sm:border-8 border-4 border-secondary w-full glass-card max-w-5xl mx-auto sm:rounded-4xl rounded-lg overflow-hidden relative z-10">
+        <Image
+          src={service.image}
+          alt={`${service.name} details`}
+          className="w-full h-auto object-cover"
+          width={1000}
+          height={1000}
+        />
+        <div className="absolute md:rounded-tl-2xl rounded-tl-lg sm:w-24 lg:w-32  w-16 flex items-center justify-center sm:h-16 h-8 bg-white md:p-4 p-2 bottom-0 right-0">
+          <Image
+            src={'/logo-light.svg'}
+            alt={`${service.name} details`}
+            className="w-full h-auto object-contain"
+            width={100}
+            height={100}
+          />
+        </div>
+      </div>
+      <Separator />
       <div className="flex justify-center flex-col sm:flex-row gap-4 items-start sm:items-center">
         {/* <button className="px-8 py-2 rounded-full bg-gradient-to-b from-blue-500 to-blue-600 text-white focus:ring-2 focus:ring-blue-400 hover:shadow-xl transition duration-200">
           Gradient
         </button> */}
         <Button asChild size="lg">
-          <Link href="/#contact">Request Proposal</Link>
+          <Link href="/contact">Request Proposal</Link>
         </Button>
         <p className="text-sm text-muted-foreground">Get a customized solution tailored to your business needs.</p>
       </div>

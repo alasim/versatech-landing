@@ -3,8 +3,9 @@
 import Industries from "@/components/industries"
 import { Card, CardContent } from "@/components/ui/card"
 import WhyChooseUs from "@/components/why-choose-us"
-import { CheckCircle, Users, Lightbulb, Award } from "lucide-react"
 import { motion } from "framer-motion"
+import { Award, CheckCircle, Lightbulb, Users } from "lucide-react"
+import Link from "next/link"
 
 export default function AboutPage() {
   return (
@@ -172,9 +173,9 @@ export default function AboutPage() {
           <p className="text-lg text-muted-foreground mb-8">
             Let's discuss how Versatech Solutions can help transform your business.
           </p>
-          <button className="px-8 py-3 rounded-full bg-primary text-white font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all">
+          <Link href="/contact" className="px-8 py-3 rounded-full bg-primary text-white font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all">
             Get In Touch
-          </button>
+          </Link>
         </motion.div>
       </div>
     </div>

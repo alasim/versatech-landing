@@ -16,6 +16,7 @@
               "id": "ip-pbx-on-premises",
               "name": "IP-PBX On-Premises",
               "slug": "ip-pbx-on-premises",
+              "image": "/images/IP-PBX On-Premises.png",
               "icon": "Server",
               "shortDescription": "On-site PBX with full control, IVR, call routing, recording, and more.",
               "features": [
@@ -35,7 +36,8 @@
             },
             {
               "id": "shared-hosted-ocs",
-              "name": "Shared Hosted",
+              "name": "Shared Hosted (Office Communication System)",
+              "image": "/images/Shared Hosted (Office Communication System).png",
               "slug": "shared-hosted-ocs",
               "icon": "Cloud",
               "shortDescription": "Cloud-based PBX with zero hardware hassle and instant scalability.",
@@ -63,7 +65,8 @@
             },
             {
               "id": "dedicated-hosted-ocs",
-              "name": "Dedicated Hosted",
+              "name": "Dedicated Hosted (Office Communication System)",
+              "image": "/images/Dedicated Hosted (Office Communication System).png",
               "slug": "dedicated-hosted-ocs",
               "icon": "Lock",
               "shortDescription": "Fully managed cloud PBX dedicated to your business with exclusive resources.",
@@ -99,6 +102,7 @@
             {
               "id": "acd-on-premises",
               "name": "ACD On-Premises",
+              "image": "/images/ACD On-Premises.png",
               "slug": "acd-on-premises",
               "icon": "Headphones",
               "shortDescription": "Automatic Call Distribution system with full control over call routing and agents.",
@@ -123,7 +127,8 @@
             },
             {
               "id": "shared-hosted-ccs",
-              "name": "Shared Hosted",
+              "name": "Shared Hosted (Customer Care System)",
+              "image": "/images/Shared Hosted (Customer Care System).png",
               "slug": "shared-hosted-ccs",
               "icon": "Cloud",
               "shortDescription": "Cloud-based Customer Care System with scalable and cost-effective support.",
@@ -149,7 +154,8 @@
             },
             {
               "id": "dedicated-hosted-ccs",
-              "name": "Dedicated Hosted",
+              "name": "Dedicated Hosted (Customer Care System)",
+              "image": "/images/Dedicated Hosted (Customer Care System).png",
               "slug": "dedicated-hosted-ccs",
               "icon": "Lock",
               "shortDescription": "Fully managed CCS with exclusive resources and enterprise-grade security.",
@@ -186,6 +192,7 @@
             {
               "id": "auto-obd",
               "name": "Auto OBD Solution",
+              "image": "/images/Auto OBD Solution.png",
               "slug": "auto-obd",
               "icon": "Zap",
               "shortDescription": "Automated outbound dialer for campaigns, notifications, and alerts.",
@@ -217,6 +224,7 @@
     {
       "id": "crm",
       "name": "CRM Solutions",
+      "image": "/images/CRM Solution.png",
       "slug": "crm",
       "description": "Customer Relationship Management solutions tailored to your business",
       "icon": "Database",
@@ -225,6 +233,7 @@
         {
           "id": "sales-crm",
           "name": "Sales CRM Solution",
+          "image": "/images/CRM Solution.png",
           "slug": "sales-crm",
           "icon": "TrendingUp",
           "shortDescription": "Manage your sales pipeline with deal stages, tasks, and revenue forecasts.",
@@ -246,6 +255,7 @@
         {
           "id": "lead-generation-crm",
           "name": "Lead Generation CRM Solution",
+          "image": "/images/CRM Solution.png",
           "slug": "lead-generation-crm",
           "icon": "Zap",
           "shortDescription": "Capture, nurture, and convert leads with automated workflows.",
@@ -267,6 +277,7 @@
         {
           "id": "tours-travel-crm",
           "name": "Tours & Travel CRM Solution",
+          "image": "/images/CRM Solution.png",
           "slug": "tours-travel-crm",
           "icon": "Globe",
           "shortDescription": "Complete travel management with packages, bookings, and customer communications.",
@@ -288,6 +299,7 @@
         {
           "id": "student-leads-crm",
           "name": "Student Leads CRM Solution",
+          "image": "/images/CRM Solution.png",
           "slug": "student-leads-crm",
           "icon": "BookOpen",
           "shortDescription": "Manage student inquiries from first contact to enrollment.",
@@ -309,6 +321,7 @@
         {
           "id": "ecommerce-crm",
           "name": "E-Commerce CRM Solution",
+          "image": "/images/CRM Solution.png",
           "slug": "ecommerce-crm",
           "icon": "ShoppingCart",
           "shortDescription": "360° customer view with RFM segmentation and abandoned cart recovery.",
@@ -330,6 +343,7 @@
         {
           "id": "order-management-crm",
           "name": "Order Management CRM Solution",
+          "image": "/images/CRM Solution.png",
           "slug": "order-management-crm",
           "icon": "PackageCheck",
           "shortDescription": "End-to-end order management from capture to fulfillment.",
@@ -353,6 +367,7 @@
     {
       "id": "server-solutions",
       "name": "Server Solutions",
+      "image": "/images/Server Solutions.png",
       "slug": "server-solutions",
       "description": "Enterprise server infrastructure and management",
       "icon": "Server",
@@ -360,7 +375,8 @@
       "services": [
         {
           "id": "virtualization-proxmox",
-          "name": "Virtualization (Proxmox)",
+          "name": "Virtualization with Real Time Backup (Proxmox)",
+          "image": "/images/Virtualization with Real Time Backup (Proxmox).png",
           "slug": "virtualization-proxmox",
           "icon": "Cpu",
           "shortDescription": "Enterprise-grade virtualization with HA, replication, and real-time backup.",
@@ -385,7 +401,8 @@
         },
         {
           "id": "storage-clustering-ceph",
-          "name": "Storage Clustering (Ceph)",
+          "name": "Storage-Level Clustering (Ceph)",
+          "image": "/images/Storage-Level Clustering (Ceph).png",
           "slug": "storage-clustering-ceph",
           "icon": "HardDrive",
           "shortDescription": "Highly available, scalable, self-healing distributed storage.",
@@ -410,6 +427,7 @@
         {
           "id": "bulk-email",
           "name": "Bulk E-mail Solution",
+          "image": "/images/Bulk E-mail Solution.png",
           "slug": "bulk-email",
           "icon": "Mail",
           "shortDescription": "High-deliverability email campaigns with tracking and automation.",
@@ -432,7 +450,8 @@
         },
         {
           "id": "server-monitoring",
-          "name": "Server Monitoring System",
+          "name": "Server Monitoring System Solution",
+          "image": "/images/Server Monitoring System Solution.png",
           "slug": "server-monitoring",
           "icon": "Activity",
           "shortDescription": "Comprehensive monitoring with metrics, logs, alerts, and integrations.",
@@ -460,6 +479,7 @@
     {
       "id": "hosting",
       "name": "Web Hosting",
+      "image": "/images/Web Hosting.png",
       "slug": "hosting",
       "description": "Reliable and secure web hosting solutions",
       "icon": "Globe",
@@ -468,6 +488,7 @@
         {
           "id": "web-hosting",
           "name": "Web Hosting",
+          "image": "/images/Web Hosting.png",
           "slug": "web-hosting",
           "icon": "Server",
           "shortDescription": "Reliable, fast, and secure hosting with backups, SSL, and full support.",
@@ -494,6 +515,7 @@
     {
       "id": "networking",
       "name": "Networking Solutions",
+      "image": "/images/Networking Solutions.png",
       "slug": "networking",
       "description": "Professional network design and implementation",
       "icon": "Network",
@@ -502,6 +524,7 @@
         {
           "id": "corporate-networking",
           "name": "Corporate Networking Solution",
+          "image": "/images/Corporate Networking Solution.png",
           "slug": "corporate-networking",
           "icon": "Layers",
           "shortDescription": "End-to-end LAN/WAN with performance, security, and professional support.",
@@ -527,6 +550,7 @@
         {
           "id": "data-networking",
           "name": "Data Networking Solution",
+          "image": "/images/Data Networking Solution.png",
           "slug": "data-networking",
           "icon": "Network",
           "shortDescription": "Core/edge networking with segmentation and monitoring.",
@@ -551,6 +575,7 @@
         {
           "id": "firewall-solution",
           "name": "Firewall Solution",
+          "image": "/images/Firewall Solution.png",
           "slug": "firewall-solution",
           "icon": "Shield",
           "shortDescription": "NGFW and IPS/IDS to protect your perimeter and ensure secure traffic.",

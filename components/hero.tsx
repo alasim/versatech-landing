@@ -1,11 +1,12 @@
 "use client"
 
-import { ArrowRight } from "lucide-react"
 import { motion } from "framer-motion"
+import { ArrowRight } from "lucide-react"
+import Link from "next/link"
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative bg-transparent min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+    <section id="hero" className="relative bg-transparent min-h-screen flex items-center justify-center pt-28 overflow-hidden">
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
@@ -26,7 +27,7 @@ export default function Hero() {
           className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight"
         >
           Empower Your Business with{" "}
-          <span className="bg-linear-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+          <span className="bg-linear-to-r from-primary via-primary/70 to-primary bg-clip-text text-transparent">
             Enterprise Solutions
           </span>
         </motion.h1>
@@ -46,13 +47,13 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.6 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <button className="group px-8 py-4 rounded-full bg-linear-to-r from-primary to-accent text-white font-bold hover:shadow-lg hover:shadow-primary/50 transition-all">
+          <Link href="/services" className="group px-8 py-4 rounded-full bg-linear-to-r from-primary to-accent text-white font-bold hover:shadow-lg hover:shadow-primary/50 transition-all">
             Explore Solutions
             <ArrowRight className="inline-block ml-2 group-hover:translate-x-1 transition-transform" size={20} />
-          </button>
-          <button className="px-8 py-4 rounded-full border-2 border-primary/30 text-foreground hover:bg-primary/5 font-bold transition-all">
+          </Link>
+          <Link href="/contact" className="px-8 py-4 rounded-full border-2 border-primary/30 text-foreground hover:bg-primary/5 font-bold transition-all">
             Schedule Demo
-          </button>
+          </Link>
         </motion.div>
 
         {/* Stats */}

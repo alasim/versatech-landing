@@ -1,9 +1,11 @@
-import Image from "next/image"
+"use client"
 import servicesData from "@/data/services.json"
+import { useTheme } from "next-themes"
+import Image from "next/image"
 import Link from "next/link"
 export default function Footer() {
   const currentYear = new Date().getFullYear()
-
+  const { theme } = useTheme()
   return (
     <footer className="bg-background border-t border-primary/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -11,7 +13,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <Image src="/logo.png" alt="Logo" width={150} height={40} className="" />
+              <Image src={theme === 'dark' ? '/logo-dark.svg' : '/logo-light.svg'} alt="Logo" width={150} height={40} className="" />
             </div>
             <p className="text-muted-foreground text-sm">Versatech delivers enterprise-grade communication and business platforms designed for modern organizations.</p>
           </div>
@@ -39,7 +41,7 @@ export default function Footer() {
                   About Us
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="#" className="hover:text-foreground transition">
                   Blog
                 </Link>
@@ -48,7 +50,7 @@ export default function Footer() {
                 <Link href="#" className="hover:text-foreground transition">
                   Careers
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link href="/contact" className="hover:text-foreground transition">
                   Contact
@@ -58,7 +60,7 @@ export default function Footer() {
           </div>
 
           {/* Legal */}
-          <div>
+          {/* <div>
             <h4 className="font-bold text-foreground mb-4">Legal</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
@@ -82,7 +84,7 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
 
         {/* Bottom Bar */}

@@ -1,18 +1,15 @@
 "use client"
 
-import { notFound, useParams } from "next/navigation"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { ArrowLeft, CheckCircle } from "lucide-react"
-import * as Icons from "lucide-react"
 import servicesData from "@/data/services.json"
+import * as Icons from "lucide-react"
+import Link from "next/link"
 
 
 
 export default function ServicePage() {
 
-  return <div className="max-w-7xl mx-auto px-4 py-20">
+  return <div className="max-w-7xl mx-auto px-4 py-28">
 
     <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground my-4">
       <Link href="/" className="hover:text-primary transition-colors">
@@ -65,6 +62,7 @@ export default function ServicePage() {
                                   </div>
                                   <h3 className="text-lg font-semibold mb-2">{service.name}</h3>
                                   <p className="text-sm text-muted-foreground">{service.shortDescription}</p>
+                                  {/* <Image src={service.image} alt={service.name} width={100} height={100} /> */}
                                 </CardContent>
                               </Card>
                             </Link>
@@ -90,6 +88,7 @@ export default function ServicePage() {
                               </div>
                               <h3 className="text-lg font-semibold mb-2">{service.name}</h3>
                               <p className="text-sm text-muted-foreground">{service.shortDescription}</p>
+                              {/* <Image src={service.image ?? ""} alt={service.name} width={100} height={100} /> */}
                             </CardContent>
                           </Card>
                         </Link>

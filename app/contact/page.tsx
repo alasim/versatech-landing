@@ -2,10 +2,11 @@
 
 import type React from "react"
 
-import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
-import { Mail, Phone, MapPin, Clock } from "lucide-react"
+import { cn } from "@/lib/utils"
+import { Clock, Mail, MapPin, Phone } from "lucide-react"
+import { useState } from "react"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -27,13 +28,31 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    // Simulate form submission
-    setTimeout(() => {
+    // we need to fetch method="POST" action="/submit_contact.php"
+    // server will handle rest
+    const response = await fetch("/submit_contact.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    }).then((res) => {
+      if (!res.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return res.json()
+    }).then((data) => {
+      console.log(data)
+      setIsSubmitting(false)
       setSubmitMessage("Thank you! We'll get back within 1 business day.")
       setFormData({ name: "", email: "", phone: "", topic: "", message: "" })
-      setIsSubmitting(false)
       setTimeout(() => setSubmitMessage(""), 5000)
-    }, 1000)
+    }).catch((error) => {
+      setIsSubmitting(false)
+      setSubmitMessage("Something went wrong. Please try again later.")
+    });
+
+
   }
 
   return (
@@ -135,7 +154,10 @@ export default function ContactPage() {
                   </div>
 
                   {submitMessage && (
-                    <div className="p-4 bg-green-50 text-green-800 rounded-lg text-sm">{submitMessage}</div>
+                    <div className={cn("p-4 rounded-lg text-sm", {
+                      "bg-green-50 text-green-800": submitMessage.startsWith("Thank"),
+                      "bg-red-50 text-red-800": submitMessage.startsWith("Something"),
+                    })}>{submitMessage}</div>
                   )}
 
                   <div className="flex items-center justify-between">
@@ -165,16 +187,16 @@ export default function ContactPage() {
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <Phone className="size-6 text-accent flex-shrink-0 mt-1" />
+                <Phone className="size-6 text-primary flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">Call</h3>
-                  <a href="tel:09613147147" className="text-accent hover:underline">
+                  <a href="tel:09613147147" className="hover:underline text-primary">
                     09613147147
                   </a>
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <MapPin className="size-6 text-primary/50 flex-shrink-0 mt-1" />
+                <MapPin className="size-6 text-primary flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">Offices</h3>
                   <p className="text-sm text-muted-foreground">
@@ -183,7 +205,7 @@ export default function ContactPage() {
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <Clock className="size-6 text-accent/50 flex-shrink-0 mt-1" />
+                <Clock className="size-6 text-primary flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">Hours</h3>
                   <p className="text-sm text-muted-foreground">Sun - Thu, 9:00 - 18:00</p>

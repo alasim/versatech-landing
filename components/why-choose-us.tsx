@@ -1,7 +1,7 @@
 "use client"
 
-import { CheckCircle2, Shield, Zap, Sliders, Server, TrendingUp } from "lucide-react"
 import { motion } from "framer-motion"
+import { CheckCircle2, Server, Shield, Sliders, TrendingUp, Zap } from "lucide-react"
 
 const features = [
     {
@@ -38,7 +38,7 @@ const features = [
 
 export default function WhyChooseUs() {
     return (
-        <section className="py-20 bg-secondary/30">
+        <section className="py-20 bg-secondary/10">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     <motion.div

@@ -1,7 +1,8 @@
 "use client"
 
-import { ArrowRight } from "lucide-react"
 import { motion } from "framer-motion"
+import { ArrowRight } from "lucide-react"
+import Link from "next/link"
 
 export default function CTA() {
   return (
@@ -38,13 +39,11 @@ export default function CTA() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <button className="group px-8 py-4 rounded-full bg-linear-to-r from-primary to-accent text-white font-bold hover:shadow-lg hover:shadow-primary/50 transition-all">
+          <Link href="/contact" className="group px-8 py-4 rounded-full bg-linear-to-r from-primary to-accent text-white font-bold hover:shadow-lg hover:shadow-primary/50 transition-all">
             Start Your Journey
             <ArrowRight className="inline-block ml-2 group-hover:translate-x-1 transition-transform" size={20} />
-          </button>
-          <button className="px-8 py-4 rounded-full border-2 border-primary/30 text-foreground hover:bg-primary/5 font-bold transition-all">
-            View Pricing
-          </button>
+          </Link>
+
         </motion.div>
       </div>
     </section>

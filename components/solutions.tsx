@@ -1,9 +1,10 @@
 "use client"
 
-import Link from "next/link"
-import { ArrowRight, Sparkles } from "lucide-react"
+import { cn } from "@/lib/utils"
 import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
+import { ArrowRight, Sparkles } from "lucide-react"
+import Link from "next/link"
+import { buttonVariants } from "./ui/button"
 
 const solutions = [
   {
@@ -144,9 +145,9 @@ export default function Solutions() {
           <p className="text-muted-foreground mb-6">
             Need a custom solution? Our team can help you find the perfect fit for your business.
           </p>
-          <Button size="lg" className="rounded-full">
+          <Link href="/services" className={cn(buttonVariants({ variant: "default", size: "lg" }))}>
             Explore All Services
-          </Button>
+          </Link>
         </motion.div>
       </div>
     </section>

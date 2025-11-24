@@ -1,25 +1,28 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { Menu, X, ChevronDown } from "lucide-react"
-import Link from "next/link"
 import {
   NavigationMenu,
-  NavigationMenuList,
-  NavigationMenuItem,
-  NavigationMenuTrigger,
   NavigationMenuContent,
+  NavigationMenuItem,
   NavigationMenuLink,
-  navigationMenuTriggerStyle,
+  NavigationMenuList,
+  NavigationMenuTrigger
 } from "@/components/ui/navigation-menu"
 import servicesData from "@/data/services.json"
+import { ChevronDown, Menu, X } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
+
+import { useIsMobile } from "@/hooks/use-mobile"
+import { useTheme } from "next-themes"
+import { useEffect, useState } from "react"
+import { ThemeSwitcher } from "./theme-switcher"
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [expandedMobileSection, setExpandedMobileSection] = useState<string | null>(null)
-
+  const { theme, setTheme } = useTheme()
   const toggleMobileSection = (section: string) => {
     setExpandedMobileSection(expandedMobileSection === section ? null : section)
   }
@@ -42,7 +45,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 relative hover:opacity-80 transition">
-            <Image src="/logo.png" alt="Logo" width={200} height={80} className="" />
+            <Image src={theme === 'dark' ? '/logo-dark.svg' : '/logo-light.svg'} alt="Logo" width={150} height={60} className="" />
             {/* <div className="w-10 h-10 rounded-lg bg-linear-to-br from-primary to-accent flex items-center justify-center text-white font-bold">
               VS
             </div>
@@ -54,7 +57,7 @@ export default function Navbar() {
             <NavigationMenuDemo />
 
           </div>
-
+          <ThemeSwitcher defaultValue="system" onChange={setTheme} value={theme as any} />
           {/* CTA Button */}
           <button className="hidden sm:inline-flex px-6 py-2 rounded-full bg-primary text-white font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all">
             <Link href="/contact">Contact Sales</Link>
@@ -83,7 +86,7 @@ export default function Navbar() {
                   <Link href="/about" className="block text-sm text-muted-foreground hover:text-primary py-1.5" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
                   <Link href="/services" className="block text-sm text-muted-foreground hover:text-primary py-1.5" onClick={() => setIsMobileMenuOpen(false)}>Services</Link>
                   <Link href="/#solutions" className="block text-sm text-muted-foreground hover:text-primary py-1.5" onClick={() => setIsMobileMenuOpen(false)}>Solutions</Link>
-                  <Link href="/#products" className="block text-sm text-muted-foreground hover:text-primary py-1.5" onClick={() => setIsMobileMenuOpen(false)}>Products</Link>
+                  <Link href="/#services" className="block text-sm text-muted-foreground hover:text-primary py-1.5" onClick={() => setIsMobileMenuOpen(false)}>Products</Link>
                 </div>
               )}
             </div>
@@ -225,108 +228,10 @@ export default function Navbar() {
 }
 
 
-// import Link from "next/link"
-import { CircleCheckIcon, CircleHelpIcon, CircleIcon } from "lucide-react"
 
-import { useIsMobile } from "@/hooks/use-mobile"
-// import {
-//   NavigationMenu,
-//   NavigationMenuContent,
-//   NavigationMenuItem,
-//   NavigationMenuLink,
-//   NavigationMenuList,
-//   NavigationMenuTrigger,
-//   navigationMenuTriggerStyle,
-// } from "@/components/ui/navigation-menu"
-/* 
-
-IP-Telephony Systems	Office and customer care communication systems with hosted and on-premises options.
-CRM Modules	Custom CRM solutions for sales, leads, travel, education, and e-commerce.
-Server Infrastructure	Virtualization, clustering, and monitoring for enterprise-grade server management.
-Hosting & Networking	Secure web hosting, corporate networking, and firewall protection.
-Auto OBD Dialer	Automated outbound dialing for campaigns, alerts, and reminders.
-Firewall & Security	Protect your data and infrastructure with advanced firewall solutions.
-*/
-const solutions: { title: string; href: string; description: string }[] = [
-  {
-    title: "IP-Telephony Systems",
-    href: "/docs/primitives/alert-dialog",
-    description:
-      "Office and customer care communication systems with hosted and on-premises options.",
-  },
-  {
-    title: "CRM Modules",
-    href: "/docs/primitives/hover-card",
-    description:
-      "Custom CRM solutions for sales, leads, travel, education, and e-commerce.",
-  },
-  {
-    title: "Server Infrastructure",
-    href: "/docs/primitives/progress",
-    description:
-      "Virtualization, clustering, and monitoring for enterprise-grade server management.",
-  },
-  {
-    title: "Hosting & Networking",
-    href: "/docs/primitives/scroll-area",
-    description: "Secure web hosting, corporate networking, and firewall protection.",
-  },
-  {
-    title: "Auto OBD Dialer",
-    href: "/docs/primitives/tabs",
-    description:
-      "Automated outbound dialing for campaigns, alerts, and reminders.",
-  },
-  {
-    title: "Firewall & Security",
-    href: "/docs/primitives/tooltip",
-    description:
-      "Protect your data and infrastructure with advanced firewall solutions.",
-  },
-]
-/* 
-🧮 Products
-Title	Description
-CRM Features	Explore modules for lead tracking, order management, and customer engagement.
-Telephony Features	Discover IP-PBX, CCS, and OBD features for seamless communication.
-Server Capabilities	Learn about Proxmox virtualization, Ceph clustering, and monitoring tools.
-Hosting Plans	Compare hosting options tailored for businesses of all sizes.
-Monitoring Tools	Real-time server and network health analytics for proactive management.
-*/
-const products = [
-  {
-    title: "CRM Features",
-    href: "/docs/primitives/alert-dialog",
-    description:
-      "Explore modules for lead tracking, order management, and customer engagement.",
-  },
-  {
-    title: "Telephony Features",
-    href: "/docs/primitives/hover-card",
-    description:
-      "Discover IP-PBX, CCS, and OBD features for seamless communication.",
-  },
-  {
-    title: "Server Capabilities",
-    href: "/docs/primitives/progress",
-    description:
-      "Learn about Proxmox virtualization, Ceph clustering, and monitoring tools.",
-  },
-  {
-    title: "Hosting Plans",
-    href: "/docs/primitives/scroll-area",
-    description: "Compare hosting options tailored for businesses of all sizes.",
-  },
-  {
-    title: "Monitoring Tools",
-    href: "/docs/primitives/tabs",
-    description:
-      "Real-time server and network health analytics for proactive management.",
-  },
-]
 export function NavigationMenuDemo() {
   const isMobile = useIsMobile()
-
+  const { theme } = useTheme()
   return (
     <NavigationMenu viewport={isMobile} >
       <NavigationMenuList className="flex-wrap">
@@ -340,7 +245,7 @@ export function NavigationMenuDemo() {
                     className="from-primary/10 to-primary/20 flex h-full w-full flex-col justify-end rounded-md bg-linear-to-b p-4 no-underline outline-hidden transition-all duration-200 select-none focus:shadow-md md:p-6"
                     href="/about"
                   >
-                    <Image src="/logo.png" alt="Logo" width={200} height={80} className="" />
+                    <Image src={theme === 'dark' ? '/logo-dark.svg' : '/logo-light.svg'} alt="Logo" width={200} height={80} className="" />
                     <div className="mb-2 text-lg font-medium sm:mt-4">
                       About Us
                     </div>
@@ -356,7 +261,7 @@ export function NavigationMenuDemo() {
               <ListItem href="/#solutions" title="Solutions">
                 See how we support businesses across corporate, education, travel, and more.
               </ListItem>
-              <ListItem href="/#products" title="Products">
+              <ListItem href="/#services" title="Products">
                 Understand what makes us a trusted partner in digital transformation.
               </ListItem>
             </ul>
@@ -507,7 +412,7 @@ export function NavigationMenuDemo() {
         </NavigationMenuItem>
         <NavigationMenuItem className="hidden md:block">
           <NavigationMenuLink asChild>
-            <Link href="/contact">Contact</Link>
+            <Link href="/about">About Us</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
 
