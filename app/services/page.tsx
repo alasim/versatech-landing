@@ -1,5 +1,3 @@
-"use client"
-
 import { Card, CardContent } from "@/components/ui/card"
 import servicesData from "@/data/services.json"
 import * as Icons from "lucide-react"
@@ -32,7 +30,7 @@ export default function ServicePage() {
             <div >
               <div className="flex items-center gap-4 mb-6 border-b border-border/50 p-6">
                 <div
-                  className={`w-20 h-20 opacity-50 flex items-center justify-center rounded-xl bg-linear-to-br ${category.color} p-3 text-white shadow-lg`}
+                  className={`w-20 h-20 flex items-center justify-center rounded-xl bg-linear-to-br ${category.color} p-3 text-white shadow-lg`}
                 >
                   <IconComponent size={24} />
                 </div>

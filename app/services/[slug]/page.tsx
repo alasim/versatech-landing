@@ -54,7 +54,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
   if (category) {
     const IconComponent = (Icons as any)[category.icon as string] || Icons.Package
     return (
-      <div className="max-w-7xl mx-auto px-4 py-20">
+      <div className="max-w-7xl mx-auto px-4 py-28">
 
         <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground my-4">
           <Link href="/" className="hover:text-primary transition-colors">
@@ -175,7 +175,27 @@ export default async function ServicePage({ params }: ServicePageProps) {
         </div>
 
       </div>
-
+      <Separator />
+      {/* Service Details Image */}
+      <div className="mt-10 sm:border-8 border-4 border-secondary w-full glass-card max-w-5xl mx-auto sm:rounded-4xl rounded-lg overflow-hidden relative z-10">
+        <Image
+          src={service.image}
+          alt={`${service.name} details`}
+          className="w-full h-auto object-cover"
+          width={1000}
+          height={1000}
+        />
+        <div className="absolute md:rounded-tl-2xl rounded-tl-lg sm:w-24 lg:w-32  w-16 flex items-center justify-center sm:h-16 h-8 bg-white md:p-4 p-2 bottom-0 right-0">
+          <Image
+            src={'/logo-light.svg'}
+            alt={`${service.name} details`}
+            className="w-full h-auto object-contain"
+            width={100}
+            height={100}
+          />
+        </div>
+      </div>
+      <Separator />
       <div className="grid gap-8 lg:grid-cols-2 mb-12">
         <Card className="glass-card">
           <CardContent className="p-6 md:p-8">
@@ -206,27 +226,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
         </Card>
       </div>
 
-      <Separator />
-      {/* Service Details Image */}
-      <div className="mt-10 sm:border-8 border-4 border-secondary w-full glass-card max-w-5xl mx-auto sm:rounded-4xl rounded-lg overflow-hidden relative z-10">
-        <Image
-          src={service.image}
-          alt={`${service.name} details`}
-          className="w-full h-auto object-cover"
-          width={1000}
-          height={1000}
-        />
-        <div className="absolute md:rounded-tl-2xl rounded-tl-lg sm:w-24 lg:w-32  w-16 flex items-center justify-center sm:h-16 h-8 bg-white md:p-4 p-2 bottom-0 right-0">
-          <Image
-            src={'/logo-light.svg'}
-            alt={`${service.name} details`}
-            className="w-full h-auto object-contain"
-            width={100}
-            height={100}
-          />
-        </div>
-      </div>
-      <Separator />
+
       <div className="flex justify-center flex-col sm:flex-row gap-4 items-start sm:items-center">
         {/* <button className="px-8 py-2 rounded-full bg-gradient-to-b from-blue-500 to-blue-600 text-white focus:ring-2 focus:ring-blue-400 hover:shadow-xl transition duration-200">
           Gradient
