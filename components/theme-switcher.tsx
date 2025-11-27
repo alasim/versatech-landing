@@ -69,11 +69,11 @@ export const ThemeSwitcher = ({
       layoutId="activeTheme"
       transition={{ type: 'spring', duration: 0.5 }}
     />
-    {theme === 'light' ? <Sun
+    {theme === 'light' ? <Moon
       className={cn(
         'relative z-10 m-auto h-4 w-4 text-foreground cursor-pointer',
       )}
-    /> : <Moon
+    /> : <Sun
       className={cn(
         'relative z-10 m-auto h-4 w-4 text-foreground cursor-pointer',
       )}

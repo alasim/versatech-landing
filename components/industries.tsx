@@ -1,7 +1,7 @@
 "use client"
 
-import { Building2, Headset, ShoppingBag, GraduationCap, Plane } from "lucide-react"
 import { motion } from "framer-motion"
+import { Building2, GraduationCap, Headset, Plane, ShoppingBag } from "lucide-react"
 
 const industries = [
     {
@@ -52,7 +52,7 @@ export default function Industries() {
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             className="group p-6 rounded-2xl bg-secondary/10 hover:bg-secondary/20 border border-primary/10 transition-all duration-300 hover:-translate-y-1"
                         >
-                            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform">
+                            <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                                 <industry.icon className="w-6 h-6" />
                             </div>
                             <h3 className="text-xl font-semibold text-foreground mb-2">{industry.name}</h3>

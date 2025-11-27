@@ -57,19 +57,6 @@ export default function ContactPage() {
 
   return (
     <div className="w-full relative">
-      {/* Grid background */}
-      {/* <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: `
-            linear-gradient(45deg, transparent 49%, #e5e7eb 49%, #e5e7eb 51%, transparent 51%),
-            linear-gradient(-45deg, transparent 49%, #e5e7eb 49%, #e5e7eb 51%, transparent 51%)
-          `,
-          backgroundSize: "40px 40px",
-          WebkitMaskImage: "radial-gradient(ellipse 80% 80% at 0% 0%, #000 50%, transparent 90%)",
-          maskImage: "radial-gradient(ellipse 80% 80% at 0% 0%, #000 50%, transparent 90%)",
-        }}
-      /> */}
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 py-20">
         <div className="py-16 flex items-center justify-center flex-col glass-card">

@@ -110,7 +110,7 @@ export default function Solutions() {
                         {solution.features.map((feature, i) => (
                           <span
                             key={i}
-                            className="px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium group-hover:bg-primary/20 transition-colors"
+                            className="px-3 py-1 rounded-full bg-secondary/10 text-forground text-sm font-medium group-hover:bg-secondary/20 transition-colors"
                           >
                             {feature}
                           </span>

@@ -62,8 +62,8 @@ export default function WhyChooseUs() {
                                 "Customizable solutions tailored to business needs"
                             ].map((item, index) => (
                                 <div key={index} className="flex items-center gap-3">
-                                    <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
-                                        <CheckCircle2 className="w-4 h-4 text-primary" />
+                                    <div className="w-6 h-6 rounded-full bg-secondary/20 flex items-center justify-center shrink-0">
+                                        <CheckCircle2 className="w-4 h-4" />
                                     </div>
                                     <span className="text-foreground">{item}</span>
                                 </div>
@@ -79,9 +79,9 @@ export default function WhyChooseUs() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                                className="p-6 rounded-xl bg-background border border-primary/10 hover:shadow-lg transition-all duration-300"
+                                className="p-6 rounded-xl bg-background border border-secondary/10 hover:shadow-lg transition-all duration-300"
                             >
-                                <feature.icon className="w-10 h-10 text-primary mb-4" />
+                                <feature.icon className="w-10 h-10 mb-4" />
                                 <h3 className="text-lg font-semibold text-foreground mb-2">{feature.title}</h3>
                                 <p className="text-sm text-muted-foreground">{feature.description}</p>
                             </motion.div>
