@@ -56,7 +56,7 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="min-h-screen w-full relative">
+    <div className="w-full relative">
       {/* Grid background */}
       {/* <div
         className="absolute inset-0 pointer-events-none"

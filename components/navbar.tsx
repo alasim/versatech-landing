@@ -232,6 +232,7 @@ export default function Navbar() {
 export function NavigationMenuDemo() {
   const isMobile = useIsMobile()
   const { theme } = useTheme()
+  console.log("🚀 ~ NavigationMenuDemo ~ theme:", theme)
   return (
     <NavigationMenu viewport={isMobile} >
       <NavigationMenuList className="flex-wrap">

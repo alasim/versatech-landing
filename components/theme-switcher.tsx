@@ -52,6 +52,33 @@ export const ThemeSwitcher = ({
   if (!mounted) {
     return null;
   }
+  return <button
+
+    className="relative h-6 w-6 rounded-full"
+    onClick={() => {
+      if (theme === 'light') {
+        setTheme('dark')
+      } else {
+        setTheme('light')
+      }
+    }}
+    type="button"
+  >
+    <motion.div
+      className="absolute inset-0 cursor-pointer rounded-full bg-accent"
+      layoutId="activeTheme"
+      transition={{ type: 'spring', duration: 0.5 }}
+    />
+    {theme === 'light' ? <Sun
+      className={cn(
+        'relative z-10 m-auto h-4 w-4 text-foreground cursor-pointer',
+      )}
+    /> : <Moon
+      className={cn(
+        'relative z-10 m-auto h-4 w-4 text-foreground cursor-pointer',
+      )}
+    />}
+  </button>
   return (
     <div
       className={cn(

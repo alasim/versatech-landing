@@ -1,10 +1,9 @@
 
-import { Button } from "@/components/ui/button"
+import { buttonVariants } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Separator } from "@/components/ui/separator"
 import servicesData from "@/data/services.json"
+import { cn } from "@/lib/utils"
 import * as Icons from "lucide-react"
-import { CheckCircle } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
@@ -67,12 +66,6 @@ export default async function ServicePage({ params }: ServicePageProps) {
         <div className={"mb-8 relative min-h-[200px] flex flex-col glass-card justify-center items-center"}>
           <h1 className="text-4xl font-bold tracking-tight mb-4 text-balance">{category.name}</h1>
           <p className="text-lg text-muted-foreground text-pretty max-w-3xl">{category.description}</p>
-          {/* <div
-            className={`w-40 h-40 absolute md:right-10 right-0 top-0 opacity-5 flex items-center justify-center rounded-xl bg-linear-to-br ${category.color} p-3 mb-6 text-white shadow-lg`}
-          >
-            <IconComponent size={150} />
-          </div> */}
-
         </div>
 
         {/* Display subcategories if they exist */}
@@ -160,11 +153,9 @@ export default async function ServicePage({ params }: ServicePageProps) {
         <span>/</span>
         <span className="text-foreground">{service.name}</span>
       </div>
-      <div className="mb-8 relative  min-h-[200px] flex flex-col glass-card justify-center items-center ">
-        {/* <div className="w-40 h-40 absolute hidden md:flex left-10 bottom-0 opacity-10  items-center justify-center rounded-xl bg-linear-to-br ${category.color} p-3 text-primary">
-          <IconComponent size={150} />
-        </div> */}
-        <div >
+      {/* <div className="mb-8 relative  min-h-[200px] flex flex-col glass-card justify-center items-center ">
+       
+        <div className="flex flex-col items-center">
           <h1 className="text-4xl font-bold tracking-tight mb-4 text-balance">{service.name}</h1>
           <p className="text-lg text-muted-foreground text-pretty max-w-3xl">{service.shortDescription}</p>
         </div>
@@ -175,67 +166,85 @@ export default async function ServicePage({ params }: ServicePageProps) {
         </div>
 
       </div>
-      <Separator />
-      {/* Service Details Image */}
-      <div className="mt-10 sm:border-8 border-4 border-secondary w-full glass-card max-w-5xl mx-auto sm:rounded-4xl rounded-lg overflow-hidden relative z-10">
-        <Image
-          src={service.image}
-          alt={`${service.name} details`}
-          className="w-full h-auto object-cover"
-          width={1000}
-          height={1000}
-        />
-        <div className="absolute md:rounded-tl-2xl rounded-tl-lg sm:w-24 lg:w-32  w-16 flex items-center justify-center sm:h-16 h-8 bg-white md:p-4 p-2 bottom-0 right-0">
-          <Image
-            src={'/logo-light.svg'}
-            alt={`${service.name} details`}
-            className="w-full h-auto object-contain"
-            width={100}
-            height={100}
-          />
+      <Separator className="my-12" /> */}
+      <div className="flex flex-col mt-20">
+        <div className="flex gap-4 justify-between relative">
+          <div className="w-full">
+            <h1 className="text-4xl font-bold tracking-tight mb-4 text-balance">{service.name}</h1>
+            <p className="text-lg text-muted-foreground text-pretty max-w-3xl">{service.extendedDescription}</p>
+            <div className="flex mt-10 flex-col sm:flex-row gap-4 items-start sm:items-center">
+              <Link href="/contact" className={cn(buttonVariants({ size: "lg" }), 'h-14')}>
+                Request Proposal
+              </Link>
+            </div>
+          </div>
+          <div className="w-[30vh] h-[30vh] absolute md:right-10 right-0 top-0 opacity-10 flex items-center justify-center rounded-xl bg-linear-to-br ${category.color} p-3 text-primary">
+            <IconComponent size={300} />
+          </div>
+
+        </div>
+
+      </div>
+
+      <div className="grid lg:grid-cols-2 gap-12 lg:gap-0 lg:mt-40 relative">
+        {/* Left Column: Features & Benefits List */}
+        <div className="space-y-4 mx-auto max-w-lg">
+          {service.features.map((feature: string, index: number) => {
+            const benefit = service.benefits[index]
+            // Only render if we have a corresponding benefit to maintain the design
+            if (!benefit) return null
+
+            return (
+              <div key={index} className="group relative pl-4 border-b border-border/40 last:border-0 hover:bg-primary/5 transition-colors rounded-xl -mx-4 px-4">
+                <div className="flex items-start gap-6 py-2">
+                  <div className="shrink-0 mt-1">
+                    <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-all duration-300">
+                      <Icons.Check className="w-5 h-5 text-primary transition-transform duration-300" />
+                    </div>
+                  </div>
+                  <div className="space-y-1">
+                    <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">{feature}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{benefit}</p>
+                  </div>
+
+                </div>
+              </div>
+            )
+          })}
+        </div>
+
+        {/* Right Column: Image */}
+        <div className="relative w-full h-full flex items-center">
+          <div className="relative w-full h-full border-8 border-primary/10 rounded-3xl overflow-hidden ">
+            <div className="absolute inset-0 bg-linear-to-br from-primary/30 via-transparent to-primary/10 z-10 pointer-events-none" />
+            <Image
+              src={service.image}
+              alt={`${service.name} details`}
+              className="w-full h-full object-cover"
+              width={1200}
+              height={1200}
+            />
+
+            {/* Floating Logo Badge */}
+            <div className="absolute bottom-0 right-0 z-20 bg-background p-2 rounded-md shadow-lg">
+              <Image
+                src={'/logo-light.svg'}
+                alt="Logo"
+                className="w-12 h-auto opacity-80"
+                width={50}
+                height={40}
+              />
+            </div>
+          </div>
         </div>
       </div>
-      <Separator />
-      <div className="grid gap-8 lg:grid-cols-2 mb-12">
-        <Card className="glass-card">
-          <CardContent className="p-6 md:p-8">
-            <h2 className="text-2xl font-semibold mb-6">Core Features</h2>
-            <ul className="space-y-3">
-              {service.features.map((feature: string, index: number) => (
-                <li key={index} className="flex items-start gap-3">
-                  <CheckCircle className="size-5 text-primary shrink-0 mt-0.5" />
-                  <span className="text-muted-foreground">{feature}</span>
-                </li>
-              ))}
-            </ul>
-          </CardContent>
-        </Card>
 
-        <Card className="glass-card">
-          <CardContent className="p-6 md:p-8">
-            <h2 className="text-2xl font-semibold mb-6">Key Benefits</h2>
-            <ul className="space-y-3">
-              {service.benefits.map((benefit: string, index: number) => (
-                <li key={index} className="flex items-start gap-3">
-                  <CheckCircle className="size-5 text-primary shrink-0 mt-0.5" />
-                  <span className="text-muted-foreground">{benefit}</span>
-                </li>
-              ))}
-            </ul>
-          </CardContent>
-        </Card>
-      </div>
-
-
-      <div className="flex justify-center flex-col sm:flex-row gap-4 items-start sm:items-center">
-        {/* <button className="px-8 py-2 rounded-full bg-gradient-to-b from-blue-500 to-blue-600 text-white focus:ring-2 focus:ring-blue-400 hover:shadow-xl transition duration-200">
-          Gradient
-        </button> */}
+      {/* <div className="flex justify-center flex-col sm:flex-row gap-4 items-start sm:items-center">
         <Button asChild size="lg">
           <Link href="/contact">Request Proposal</Link>
         </Button>
         <p className="text-sm text-muted-foreground">Get a customized solution tailored to your business needs.</p>
-      </div>
+      </div> */}
     </div>
   )
 }

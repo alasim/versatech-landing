@@ -19,6 +19,7 @@
               "image": "/images/IP-PBX On-Premises.png",
               "icon": "Server",
               "shortDescription": "On-site PBX with full control, IVR, call routing, recording, and more.",
+              "extendedDescription": "A robust on-site PBX solution designed for businesses that demand complete control over communication infrastructure. With advanced features like IVR, call routing, recording, and CRM integration, you ensure seamless internal and external communication. By hosting the PBX locally, you gain full data privacy, reliability, and scalability while reducing call costs through VoIP technology. Perfect if you value customization, compliance, and in-house management of your telephony systems.",
               "features": [
                 "SIP/IAX, IVR, Ring Groups, Call Queues",
                 "Extensions, Intercom, Paging, Call Recording",
@@ -41,6 +42,7 @@
               "slug": "shared-hosted-ocs",
               "icon": "Cloud",
               "shortDescription": "Cloud-based PBX with zero hardware hassle and instant scalability.",
+              "extendedDescription": "A cloud-powered PBX system that eliminates hardware investments and maintenance headaches. This multi-tenant solution offers enterprise-grade features such as IVR, smart call routing, conferencing, and real-time analytics—all accessible from anywhere. With built-in redundancy, encryption, and a 99.9% uptime SLA, you can scale instantly while enjoying predictable monthly costs. Ideal if you seek flexibility, mobility, and cost efficiency.",
               "features": [
                 "Cloud PBX (no on-site server)",
                 "IVR & Smart Call Routing",
@@ -70,6 +72,7 @@
               "slug": "dedicated-hosted-ocs",
               "icon": "Lock",
               "shortDescription": "Fully managed cloud PBX dedicated to your business with exclusive resources.",
+              "extendedDescription": "A fully managed, dedicated cloud PBX tailored exclusively to your business. Unlike shared solutions, this service provides isolated resources, stronger compliance, and complete customization of call flows, integrations, and analytics. With enterprise-grade performance, encrypted communication, and disaster recovery, you enjoy reliability and security at scale. Best suited if you require high performance, advanced integrations, and guaranteed resource availability.",
               "features": [
                 "Dedicated Cloud PBX instance",
                 "Full IVR & Call Flow customization",
@@ -106,6 +109,7 @@
               "slug": "acd-on-premises",
               "icon": "Headphones",
               "shortDescription": "Automatic Call Distribution system with full control over call routing and agents.",
+              "extendedDescription": "A powerful Automatic Call Distribution system deployed on-site, giving you full control over agent workflows and call routing. With skill-based routing, real-time monitoring, whisper/barge features, and CRM integration, you can optimize customer interactions while maintaining strict data privacy. Ideal if you prioritize reliability, customization, and in-house management of customer care operations.",
               "features": [
                 "Advanced ACD engine, multi-level queues",
                 "Skill-based routing & load balancing",
@@ -132,6 +136,7 @@
               "slug": "shared-hosted-ccs",
               "icon": "Cloud",
               "shortDescription": "Cloud-based Customer Care System with scalable and cost-effective support.",
+              "extendedDescription": "A cloud-based customer care platform designed for scalability and cost efficiency. This multi-tenant system offers IVR, queues, skill-based routing, and unified messaging, enabling your team to deliver seamless support from anywhere. With automatic updates, encryption, and real-time analytics, you can quickly deploy and scale your customer service operations without upfront infrastructure costs.",
               "features": [
                 "Multi-tenant CCS with ACD",
                 "IVR, Queues, Ring Groups, Skills",
@@ -159,6 +164,7 @@
               "slug": "dedicated-hosted-ccs",
               "icon": "Lock",
               "shortDescription": "Fully managed CCS with exclusive resources and enterprise-grade security.",
+              "extendedDescription": "A premium hosted customer care system with exclusive resources and enterprise-grade security. This solution provides advanced ACD, IVR customization, CRM/ERP integrations, and detailed analytics dashboards. With encrypted communication, disaster recovery, and provider-managed updates, you enjoy high performance, compliance, and scalability. Perfect if you require tailored workflows and guaranteed reliability.",
               "features": [
                 "Dedicated cloud instance",
                 "ACD with skill-based routing",
@@ -196,6 +202,7 @@
               "slug": "auto-obd",
               "icon": "Zap",
               "shortDescription": "Automated outbound dialer for campaigns, notifications, and alerts.",
+              "extendedDescription": "An intelligent outbound dialer system that automates campaigns, notifications, and alerts. Supporting predictive, progressive, and preview dialing, it integrates with IVR, CRM, and quality monitoring tools to maximize agent productivity and customer engagement. With real-time reporting, DNC compliance, and advanced scheduling, you can run efficient outreach campaigns while reducing missed calls and improving customer experience.",
               "features": [
                 "Bulk list uploads & segmentation",
                 "Scheduling & retry logic",
@@ -237,6 +244,7 @@
           "slug": "sales-crm",
           "icon": "TrendingUp",
           "shortDescription": "Manage your sales pipeline with deal stages, tasks, and revenue forecasts.",
+          "extendedDescription": "A comprehensive sales management platform that streamlines pipelines, automates tasks, and provides real-time visibility into deals and revenue forecasts. With click-to-call, dashboards, and activity tracking, your sales team can boost conversion rates and ensure timely follow-ups. Designed to empower you with actionable insights and automation for faster growth.",
           "features": [
             "Deal stages and tasks",
             "Click-to-call with call logs",
@@ -259,6 +267,7 @@
           "slug": "lead-generation-crm",
           "icon": "Zap",
           "shortDescription": "Capture, nurture, and convert leads with automated workflows.",
+          "extendedDescription": "A dynamic CRM tailored for capturing, nurturing, and converting leads across multiple channels. Featuring automated workflows, lead scoring, and campaign tracking, it ensures you never miss an opportunity. Integrated with marketing tools, it helps you accelerate response times, improve lead quality, and measure ROI effectively.",
           "features": [
             "Web forms and APIs",
             "Auto-assignment and notifications",
@@ -281,6 +290,7 @@
           "slug": "tours-travel-crm",
           "icon": "Globe",
           "shortDescription": "Complete travel management with packages, bookings, and customer communications.",
+          "extendedDescription": "A specialized CRM for travel agencies and tour operators, offering package creation, booking management, and customer communication tools. With integrated payments, vouchers, and itinerary management, it simplifies operations while enhancing customer experience. Perfect if you aim to increase bookings and deliver personalized travel services.",
           "features": [
             "Package builder and quotations",
             "Payments and vouchers",
@@ -303,6 +313,7 @@
           "slug": "student-leads-crm",
           "icon": "BookOpen",
           "shortDescription": "Manage student inquiries from first contact to enrollment.",
+          "extendedDescription": "A CRM designed for educational institutions to manage student inquiries and admissions pipelines. With campaign tracking, scoring, bulk communication, and document management, it streamlines enrollment processes and improves student engagement. Ideal if you want higher conversion rates and an organized admissions process.",
           "features": [
             "Campaign sources and scoring",
             "Admissions pipeline",
@@ -325,6 +336,7 @@
           "slug": "ecommerce-crm",
           "icon": "ShoppingCart",
           "shortDescription": "360° customer view with RFM segmentation and abandoned cart recovery.",
+          "extendedDescription": "A CRM tailored for e-commerce businesses to manage customer interactions and sales processes. Featuring RFM segmentation, abandoned cart recovery, and support integrations, it provides a 360° view of customer behavior. With order history tracking and personalized marketing, it helps you increase customer lifetime value and recover lost sales.",
           "features": [
             "Customer 360 and RFM segments",
             "Abandoned cart automations",
@@ -347,6 +359,7 @@
           "slug": "order-management-crm",
           "icon": "PackageCheck",
           "shortDescription": "End-to-end order management from capture to fulfillment.",
+          "extendedDescription": "A CRM solution designed for e-commerce businesses to manage customer interactions and sales processes. Featuring RFM segmentation, abandoned cart recovery, and support integrations, it provides a 360° view of customer behavior. With order history tracking and personalized marketing, it helps you increase customer lifetime value and recover lost sales.",
           "features": [
             "From capture to fulfillment",
             "Inventory and invoicing",
@@ -380,6 +393,7 @@
           "slug": "virtualization-proxmox",
           "icon": "Cpu",
           "shortDescription": "Enterprise-grade virtualization with HA, replication, and real-time backup.",
+          "extendedDescription": "A virtualization platform that provides high availability, replication, and real-time backup for enterprise-grade servers. Featuring KVM and LXC virtualization, it ensures business continuity and data protection. With monitoring, reporting, and network management capabilities, it helps you optimize server resources and enhance security.",
           "features": [
             "KVM & LXC virtualization",
             "HA clusters",
@@ -406,6 +420,7 @@
           "slug": "storage-clustering-ceph",
           "icon": "HardDrive",
           "shortDescription": "Highly available, scalable, self-healing distributed storage.",
+          "extendedDescription": "A storage solution that provides high availability, scalability, and self-healing capabilities for distributed storage. Featuring block, object, and file storage, it ensures data durability and continuity. With multi-site replication and monitoring capabilities, it helps you manage storage resources efficiently and enhance security.",
           "features": [
             "Block, object, file storage",
             "Replication & self-healing",
@@ -431,6 +446,7 @@
           "slug": "bulk-email",
           "icon": "Mail",
           "shortDescription": "High-deliverability email campaigns with tracking and automation.",
+          "extendedDescription": "A bulk email solution that ensures high deliverability and inbox placement through warmup and reputation management. Featuring templates, scheduling, and tracking capabilities, it helps you save time with automation and provides actionable insights. With segmentation, personalization, and compliance features, it ensures your campaigns are effective and secure.",
           "features": [
             "Email warmup & reputation",
             "Templates & scheduling",
@@ -455,6 +471,7 @@
           "slug": "server-monitoring",
           "icon": "Activity",
           "shortDescription": "Comprehensive monitoring with metrics, logs, alerts, and integrations.",
+          "extendedDescription": "A server monitoring system that provides comprehensive monitoring with metrics, logs, alerts, and integrations. Featuring real-time dashboards, anomaly detection, and uptime monitoring, it helps you proactively detect and resolve issues. With log aggregation and alert routing capabilities, it ensures operational efficiency and reduces downtime.",
           "features": [
             "Real-time dashboards",
             "Anomaly detection & alerts",
@@ -492,6 +509,7 @@
           "slug": "web-hosting",
           "icon": "Server",
           "shortDescription": "Reliable, fast, and secure hosting with backups, SSL, and full support.",
+          "extendedDescription": "A web hosting solution that provides reliable, fast, and secure hosting with backups, SSL, and full support. Featuring shared, VPS, and dedicated hosting options, it ensures website performance and security. With daily backups, uptime monitoring, and 24/7 support, it helps you manage your website efficiently and protect your data.",
           "features": [
             "Shared, VPS, Dedicated",
             "SSL, CDN, DDoS protection",
@@ -528,6 +546,7 @@
           "slug": "corporate-networking",
           "icon": "Layers",
           "shortDescription": "End-to-end LAN/WAN with performance, security, and professional support.",
+          "extendedDescription": "A corporate networking solution that provides end-to-end LAN/WAN with performance, security, and professional support. Featuring design, procurement, deployment, and staff training, it ensures reliable network performance and security. With monitoring, optimization, and redundancy capabilities, it helps you manage your network efficiently and protect your data.",
           "features": [
             "Design, procurement, deployment",
             "LAN, WAN, Wi-Fi, wired",
@@ -554,6 +573,7 @@
           "slug": "data-networking",
           "icon": "Network",
           "shortDescription": "Core/edge networking with segmentation and monitoring.",
+          "extendedDescription": "A data networking solution that provides core/edge networking with segmentation and monitoring. Featuring switching, routing, and security features, it ensures reliable network performance and security. With monitoring, optimization, and redundancy capabilities, it helps you manage your network efficiently and protect your data.",
           "features": [
             "Core/edge switching & routing",
             "VLANs, QoS, link aggregation",
@@ -579,6 +599,7 @@
           "slug": "firewall-solution",
           "icon": "Shield",
           "shortDescription": "NGFW and IPS/IDS to protect your perimeter and ensure secure traffic.",
+          "extendedDescription": "A firewall solution that provides NGFW and IPS/IDS to protect your perimeter and ensure secure traffic. Featuring policies, NAT, and VPN features, it ensures reliable network performance and security. With monitoring, optimization, and redundancy capabilities, it helps you manage your network efficiently and protect your data.",
           "features": [
             "Policies, NAT, VPN",
             "IPS/IDS",
